@@ -6,7 +6,7 @@
 #    ▀▀███▀▀▀██▄  ███    ███ ▀███████████ ▀███████████ ¦ Dev : @TH3Pearlin
 #      ███    ██▄ ███    ███          ███          ███ ¦ Dev : @OMMMM
 #      ███    ███ ███    ███    ▄█    ███    ▄█    ███
-#    ▄█████████▀   ▀██████▀   ▄████████▀   ▄████████▀  ¦ Source TH3Pearlin BY @UUIOO
+#    ▄█████████▀   ▀██████▀   ▄████████▀   ▄████████▀  ¦ Source TH3Pearlin BY @UUIYY
 #---------------------------------------------------------------------
 ]]
 local function iPearlin(msg,MsgText)
@@ -1329,7 +1329,9 @@ if not redis:get(Pearlin.."lock_linkk"..msg.chat_id_) then return "📡*¦* ال
 if not redis:get(Pearlin..'linkGroup'..msg.chat_id_) then return "📡*¦* اوه 🙀 لا يوجد رابط ☹️\n🔖*¦*لانشاء رابط ارسل { انشاء رابط } \n📡" end
 local GroupName = redis:get(Pearlin..'group:name'..msg.chat_id_)
 local GroupLink = redis:get(Pearlin..'linkGroup'..msg.chat_id_)
-return "🔖¦رابـط الـمـجـمـوعه 💯\n🌿¦ "..Flter_Markdown(GroupName).." :\n\n["..GroupLink.."]\n"
+local LinkG = "["..GroupName.."]("..GroupLink..")"
+return
+sendMsgg(msg.chat_id_,msg.id_,LinkG)
 end
 
 if MsgText[1] == "ضع القوانين" then
@@ -2930,7 +2932,7 @@ end
  
 if (MsgText[1] == 'تحديث السورس' or MsgText[1] == 'تحديث السورس ™') then
 if not msg.SudoBase then return "✧ هذا الامر يخص {المطور الاساسي} فقط  ➻" end
-local GetVerison = https.request('https://UUIOO.github.io/GetVersion.txt') or 0
+local GetVerison = https.request('https://UUIYY.github.io/GetVersion.txt') or 0
 print(GetVerison.." > "..version)
 if GetVerison > version then
 UpdateSourceStart = true
@@ -2996,8 +2998,8 @@ end
 if (MsgText[1]== "ايدي" or MsgText[1]=="ايدي 🆔") and msg.type == "pv" then return  "\n"..msg.sender_user_id_.."\n"  end
 
 if MsgText[1]== "قناة السورس 📡" and msg.type == "pv" then
-local inline = {{{text="قنآهہ‏‏ آلسـورس : الـزعـيـم 🍃",url="t.me/UUIOO"}}}
-send_key(msg.sender_user_id_,'  [قناة السورس : الـزعـيـم](t.me/UUIOO)',nil,inline,msg.id_)
+local inline = {{{text="قنآهہ‏‏ آلسـورس : الـزعـيـم 🍃",url="t.me/UUIYY"}}}
+send_key(msg.sender_user_id_,'  [قناة السورس : الـزعـيـم](t.me/UUIYY)',nil,inline,msg.id_)
 return false
 end
 
@@ -3497,14 +3499,14 @@ return [[
 » تدخل مـعلومـآتگ مـن توگن ومـعرفگ 
 » وسـوف يعمـل آلبوت بالسـگرين تلقآئيآ ...
 
-💭┇ قناة السورس ☜ @UUIOO
+💭┇ قناة السورس ☜ @UUIYY
 
 ]]
 end
 
 if MsgText[1] == "متجر الملفات" or MsgText[1]:lower() == "/store"  then
 if not msg.SudoBase then return "✧ هذا الامر يخص {المطور الاساسي} فقط  ➻" end
-local Get_Files, res = https.request("https://UUIOO.github.io/GetFiles.json")
+local Get_Files, res = https.request("https://UUIYY.github.io/GetFiles.json")
 print(Get_Files)
 print(res)
 if res == 200 then
@@ -3544,7 +3546,7 @@ TText = "📑| الملف موجود بالفعل \n🔖| تم تحديث الم
 else
 TText = "🔖| تم تثبيت وتفعيل الملف بنجاح ➻"
 end
-local Get_Files, res = https.request("https://raw.githubusercontent.com/UUIOO/UUIOO.github.io/master/plugins/"..FileName)
+local Get_Files, res = https.request("https://raw.githubusercontent.com/UUIYY/UUIYY.github.io/master/plugins/"..FileName)
 if res == 200 then
 print("DONLOADING_FROM_URL: "..FileName)
 local FileD = io.open("plugins/"..FileName,'w+')

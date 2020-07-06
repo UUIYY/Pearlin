@@ -6,7 +6,7 @@
 #    ▀▀███▀▀▀██▄  ███    ███ ▀███████████ ▀███████████ ¦ Dev : @TH3Pearlin
 #      ███    ██▄ ███    ███          ███          ███ ¦ Dev : @OMMMM
 #      ███    ███ ███    ███    ▄█    ███    ▄█    ███
-#    ▄█████████▀   ▀██████▀   ▄████████▀   ▄████████▀  ¦ Source TH3Pearlin BY @UUIOO
+#    ▄█████████▀   ▀██████▀   ▄████████▀   ▄████████▀  ¦ Source TH3Pearlin BY @UUIYY
 #---------------------------------------------------------------------
 ]]
 
@@ -47,6 +47,25 @@ clear_draft_= 0,
 entities_={},
 parse_mode_=  {ID = "TextParseModeMarkdown"} ,
 }},funcb or dl_cb,nil)
+end
+
+function sendMsgg(chat_id,reply_id,text,markup,funcb)
+pcall(tdcli_function({
+ID="SendMessage",
+chat_id_=chat_id,
+reply_to_message_id_= reply_id,
+disable_notification_=1,
+from_background_= 1,
+reply_markup_= nil,
+input_message_content_={
+ID = "InputMessageText",
+text_= text,
+disable_web_page_preview_= 0,
+clear_draft_= 0,
+entities_={},
+parse_mode_=  {ID = "TextParseModeMarkdown"} ,
+}},funcb or dl_cb,nil)
+)
 end
 
 function sendPhoto(chat_id,reply_id,photo,caption,func)
@@ -425,13 +444,13 @@ end
 function UpdateSource(msg,edit)
 if edit then EditMsg(msg.chat_id_,msg.id_,'10% - |█          |') end
 if edit then EditMsg(msg.chat_id_,msg.id_,'20% - |███         |') end
-download_file('https://raw.githubusercontent.com/UUIOO/Pearlin/master/inc/Run.lua','./inc/Run.lua')
+download_file('https://raw.githubusercontent.com/UUIYY/Pearlin/master/inc/Run.lua','./inc/Run.lua')
 if edit then EditMsg(msg.chat_id_,msg.id_,'40% - |█████       |') end
-download_file('https://raw.githubusercontent.com/UUIOO/Pearlin/master/inc/locks.lua','./inc/locks.lua')
+download_file('https://raw.githubusercontent.com/UUIYY/Pearlin/master/inc/locks.lua','./inc/locks.lua')
 if edit then EditMsg(msg.chat_id_,msg.id_,'60% - |███████     |') end
-download_file('https://raw.githubusercontent.com/UUIOO/Pearlin/master/inc/Script.lua','./inc/Script.lua')
+download_file('https://raw.githubusercontent.com/UUIYY/Pearlin/master/inc/Script.lua','./inc/Script.lua')
 if edit then EditMsg(msg.chat_id_,msg.id_,'80% - |█████████   |') end
-download_file('https://raw.githubusercontent.com/UUIOO/Pearlin/master/inc/functions.lua','./inc/functions.lua')
+download_file('https://raw.githubusercontent.com/UUIYY/Pearlin/master/inc/functions.lua','./inc/functions.lua')
 if edit then EditMsg(msg.chat_id_,msg.id_,'100% - |█████████████|\n\n🔝*¦* تم تحديث السورس الى اصدار *v'..redis:get(Pearlin..":VERSION")..'*\n📟*¦* تم اعاده تشغيل السورس بنجاح') end
 if edit then dofile("./inc/Run.lua") end
 print("Update Source And Reload ~ ./inc/Run.lua")
@@ -501,10 +520,10 @@ Name = data.first_name_ .." "..data.last_name_
  else 
 Name = data.first_name_ 
 end
-usernn = data.username_ or "UUIOO"
+usernn = data.username_ or "UUIYY"
 else 
 Name = data.title_
-usernn = data.type_.user_.username_ or "UUIOO"
+usernn = data.type_.user_.username_ or "UUIYY"
 end
 Name = Name:gsub('[[][]]','')
 Name = FlterName(Name,10)
