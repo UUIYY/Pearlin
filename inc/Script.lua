@@ -1324,6 +1324,26 @@ end
 return false
 end 
 
+
+if Text:match("^قولهم (.*)$") then
+if utf8.len(Text:match("^قولهم (.*)$")) > 50 then 
+return "✧ ما اقدر اقولهم اكثر من 50 حرف 🙌🏾"
+end
+if not msg.Admin then return "✧ هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقـط ➻" end
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 200
+},function(ver,Pearlin)
+local Pearlin_Text = Text:match("^قولهم (.*)$"),50
+local t = "\n🗣¦ "..Pearlin_Text.."\n━━━━━━━━━━━━━\n"
+x = 0
+local list = Pearlin.members_
+for k, v in pairs(list) do
+x = x + 1
+t = t..""..x.." - {["..v.user_id_.."](tg://user?id="..v.user_id_..")} \n"
+end
+send_msg(msg.chat_id_,t,msg.id_)
+end,nil)
+end
+
 if MsgText[1] == "الرابط" then
 if not redis:get(Pearlin.."lock_linkk"..msg.chat_id_) then return "📡*¦* الامر معطل من قبل الادارة \n^"  end
 if not redis:get(Pearlin..'linkGroup'..msg.chat_id_) then return "📡*¦* اوه 🙀 لا يوجد رابط ☹️\n🔖*¦*لانشاء رابط ارسل { انشاء رابط } \n📡" end
@@ -5461,6 +5481,7 @@ Pearlin = {
 "^(مسح) (.+)$",
 '^(منع) (.+)$',
 '^(الغاء منع) (.+)$',
+'^(قولهم) (.+)$',
 "^(حظر عام) (@[%a%d_]+)$",
 "^(حظر عام) (%d+)$",
 "^(الغاء العام) (@[%a%d_]+)$",
