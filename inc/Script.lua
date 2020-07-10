@@ -3018,7 +3018,7 @@ end
 
 if (MsgText[1]== "ايدي" or MsgText[1]=="ايدي 🆔") and msg.type == "pv" then return  "\n"..msg.sender_user_id_.."\n"  end
 
-if MsgText[1]== "قناة السورس 📡" and msg.type == "pv" then
+if MsgText[1]== "قناة السورس" and msg.type == "pv" then
 local inline = {{{text="قنآهہ‏‏ آلسـورس : بـرليـنَ 🍃",url="t.me/Ooko0"}}}
 send_key(msg.sender_user_id_,'  [قناة السورس : بـرليـنَ](t.me/Ooko0)',nil,inline,msg.id_)
 return false
