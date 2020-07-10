@@ -457,7 +457,7 @@ print("Update Source And Reload ~ ./inc/Run.lua")
 
 end
 ----------------------{ Get Name Bot }-----------------------------
-Bot_Name = redis:get(Pearlin..":NameBot:") or "الزعيم"
+Bot_Name = redis:get(Pearlin..":NameBot:") or "بـرليـنَ"
 
 
 function GetType(ChatID) 
@@ -934,14 +934,14 @@ function convert_Klmat(msg,data,Replay,MD)
   local NameUser = ResolveName(data)
   local Emsgs = redis:get(Pearlin..'msgs:'..msg.sender_user_id_..':'..msg.chat_id_) or 1
   if data.username_ then UserNameID = "@"..data.username_ else UserNameID = "لا يوجد" end  
-  Replay = Replay:gsub("{الاسم}",NameUser)
-  Replay = Replay:gsub("{الايدي}",msg.sender_user_id_)
-  Replay = Replay:gsub("{المعرف}",UserNameID)
-  Replay = Replay:gsub("{الرتبه}",msg.TheRank)
+  Replay = Replay:gsub("#الاسم",NameUser)
+  Replay = Replay:gsub("#الايدي",msg.sender_user_id_)
+  Replay = Replay:gsub("#اليوزر",UserNameID)
+  Replay = Replay:gsub("#الرتبه",msg.TheRank)
   Replay = Replay:gsub("{التفاعل}",Get_Ttl(Emsgs))
-  Replay = Replay:gsub("{الرسائل}",Emsgs)
-  Replay = Replay:gsub("{التعديل}",edited)
-  Replay = Replay:gsub("{النقاط}",points)
+  Replay = Replay:gsub("#الرسائل",Emsgs)
+  Replay = Replay:gsub("#التعديل",edited)
+  Replay = Replay:gsub("#النقاط",points)
   if MD then
   return Replay
   else
@@ -1910,7 +1910,7 @@ if cmd == "upMshrf" then
   redis:hset(Pearlin..'username:'..UserID,'username',Resolv)
   redis:setex(Pearlin..":uploadingsomeon:"..ChatID..msg.sender_user_id_,500,NameUser)
   redis:setex(Pearlin..":uploadingsomeon2:"..ChatID..msg.sender_user_id_,500,UserID)
-  sendMsg(ChatID,MsgID,"📇|  » حسننا الان ارسل صلاحيات المشرف :\n\n|1- صلاحيه تغيير المعلومات\n|2- صلاحيه حذف الرسائل\n|3- صلاحيه دعوه مستخدمين\n|4- صلاحيه حظر وتقيد المستخدمين \n|5- صلاحيه تثبيت الرسائل \n|6- صلاحيه رفع مشرفين اخرين\n\n|[*]- لرفع كل الصلاحيات ما عدا رفع المشرفين \n|[**] - لرفع كل الصلاحيات مع رفع المشرفين \n\n🚸| يمكنك اختيار الارقام معا وتعيين الكنيه للمشرف في ان واحد مثلا : \n\n| 136 الزعيم\n📬") 
+  sendMsg(ChatID,MsgID,"📇|  » حسننا الان ارسل صلاحيات المشرف :\n\n|1- صلاحيه تغيير المعلومات\n|2- صلاحيه حذف الرسائل\n|3- صلاحيه دعوه مستخدمين\n|4- صلاحيه حظر وتقيد المستخدمين \n|5- صلاحيه تثبيت الرسائل \n|6- صلاحيه رفع مشرفين اخرين\n\n|[*]- لرفع كل الصلاحيات ما عدا رفع المشرفين \n|[**] - لرفع كل الصلاحيات مع رفع المشرفين \n\n🚸| يمكنك اختيار الارقام معا وتعيين الكنيه للمشرف في ان واحد مثلا : \n\n| 136 بـرليـنَ\n📬") 
   return false
 end
 
