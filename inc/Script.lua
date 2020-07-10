@@ -1596,22 +1596,6 @@ if not redis:get(Pearlin.."lock_takkl"..msg.chat_id_) then  return "✧ الام
 return TagAll(msg) 
 end
 
-if MsgText[1] == "تاك" then
-if not msg.Admin then return "• ** هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n" end
-tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 100
-},function(ta,taha)
-local t = "\n قائمة الاعضاء \n——————\n"
-x = 0
-local list = taha.members_
-for k, v in pairs(list) do
-users = redis:get(Pearlin..'user_names:'..v.user_id_) or v.user_id_
-x = x + 1
-t = t..""..x.." -  {@"..database:get(bot_id..'user:Name'..v.user_id_).."}\n*"
-else
-end
-send_msg(msg.chat_id_,t,msg.id_)
-end,nil)
-end
 
 if MsgText[1] == "منع" then 
 if not msg.Admin then return "✧ هذا الامر يخص ❲الادمن,المدير,المنشئ,المطور❳ فقـط ➻ " end
@@ -5491,7 +5475,6 @@ Pearlin = {
 
 
 "^(تاك للكل)$",
-"^(تاك)$",
 "^(تنزيل الكل)$",
 "^(تقييد)$",
 "^(فك التقييد)$",
