@@ -10,48 +10,28 @@
 #                                        ███    ███ 
 ------------------------------------------------------
 ]]
-local function download(file_id, dl_cb, cmd)
-  tdcli_function ({
-    ID = "DownloadFile",
-    file_id_ = file_id
-  }, dl_cb, cmd)
-end
-
-
-Er_cjson , JSON  = pcall(require, "cjson")
 Er_ssl   , https = pcall(require, "ssl.https")
-Er_url   , URL   = pcall(require, "socket.url")
 Er_http  , http  = pcall(require, "socket.http")
-Er_utf8  , utf8  = pcall(require, "lua-utf8")
-Er_redis , redis = pcall(require, "redis")
+http.TIMEOUT = 5
 JSON   = (loadfile "./libs/json.lua")()
 redis  = (loadfile "./libs/redis.lua")()
 URL    = (loadfile "./libs/url.lua")()
-json  = dofile('./inc/JSON.lua')
+json  = dofile('./inc/JSON.lua')()
+Er_utf8  , utf8  = pcall(require, "lua-utf8")
 redis = redis.connect('127.0.0.1',6379)
-http.TIMEOUT = 5
 
-if not Er_cjson then
-print("('\n\27[1;31m￤Pkg _ Cjson is Not installed.'\n\27[0m￤")
+
+if not Er_ssl then
+print("('\n\27[1;31m￤Pkg _ luaSec - ssl  is Not installed.'\n\27[0m￤")
 os.exit()
 end
-if not Er_http then
-print("('\n\27[1;31m￤Pkg _ luaSec - https  is Not installed.'\n\27[0m￤")
-os.exit()
-end
-if not Er_url then
-print("('\n\27[1;31m￤Pkg _ Lua-cURL  is Not installed.'\n\27[0m￤")
-os.exit()
-end
-if not Er_redis then
-print("('\n\27[1;31m￤Pkg _ redis-lua is Not installed.'\n\27[0m￤")
-os.exit()
-end
+
 if not Er_utf8 then
 print("('\n\27[1;31m￤Pkg >> UTF_8 is Not installed.'\n\27[0m￤")
 os.execute("sudo luarocks install luautf8")
 os.exit()
 end
+
 
 
 function create_config(Token)
