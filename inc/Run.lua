@@ -1,36 +1,56 @@
 --[[
-#    ▀█████████▄   ▄██████▄     ▄████████    ▄████████
-#      ███    ███ ███    ███   ███    ███   ███    ███
-#      ███    ███ ███    ███   ███    █▀    ███    █▀
-#     ▄███▄▄▄██▀  ███    ███   ███          ███
-#    ▀▀███▀▀▀██▄  ███    ███ ▀███████████ ▀███████████ ¦ Dev : @TH3boss
-#      ███    ██▄ ███    ███          ███          ███ ¦ Dev : @OMMMM
-#      ███    ███ ███    ███    ▄█    ███    ▄█    ███
-#    ▄█████████▀   ▀██████▀   ▄████████▀   ▄████████▀  ¦ Source TH3boss BY @TH3BS
-#---------------------------------------------------------------------
-]] 
+#  ▄█    █▄     ▄████████    ▄████████    ▄████████  Channel : @UUIOO 
+#  ███    ███   ███    ███   ███    ███   ███    ███ 
+#  ███    ███   ███    █▀    ███    █▀    ███    ███ 
+#  ███    ███  ▄███▄▄▄      ▄███▄▄▄      ▄███▄▄▄▄██▀  Bot : @UUIOOBot
+#  ███    ███ ▀▀███▀▀▀     ▀▀███▀▀▀     ▀▀███▀▀▀▀▀   
+#  ███    ███   ███    █▄    ███    █▄  ▀███████████ Dev : @RSAIED and @YYBYY
+#  ███    ███   ███    ███   ███    ███   ███    ███ 
+#   ▀██████▀    ██████████   ██████████   ███    ███  By Source boss
+#                                        ███    ███ 
+------------------------------------------------------
+]]
+local function download(file_id, dl_cb, cmd)
+  tdcli_function ({
+    ID = "DownloadFile",
+    file_id_ = file_id
+  }, dl_cb, cmd)
+end
+
+
+Er_cjson , JSON  = pcall(require, "cjson")
 Er_ssl   , https = pcall(require, "ssl.https")
+Er_url   , URL   = pcall(require, "socket.url")
 Er_http  , http  = pcall(require, "socket.http")
-http.TIMEOUT = 5
+Er_utf8  , utf8  = pcall(require, "lua-utf8")
+Er_redis , redis = pcall(require, "redis")
 JSON   = (loadfile "./libs/json.lua")()
 redis  = (loadfile "./libs/redis.lua")()
 URL    = (loadfile "./libs/url.lua")()
-json  = dofile('./inc/JSON.lua')
-Er_utf8  , utf8  = pcall(require, "lua-utf8")
 redis = redis.connect('127.0.0.1',6379)
+http.TIMEOUT = 5
 
-
-if not Er_ssl then
-print("('\n\27[1;31m￤Pkg _ luaSec - ssl  is Not installed.'\n\27[0m￤")
+if not Er_cjson then
+print("('\n\27[1;31m￤Pkg _ Cjson is Not installed.'\n\27[0m￤")
 os.exit()
 end
-
+if not Er_http then
+print("('\n\27[1;31m￤Pkg _ luaSec - https  is Not installed.'\n\27[0m￤")
+os.exit()
+end
+if not Er_url then
+print("('\n\27[1;31m￤Pkg _ Lua-cURL  is Not installed.'\n\27[0m￤")
+os.exit()
+end
+if not Er_redis then
+print("('\n\27[1;31m￤Pkg _ redis-lua is Not installed.'\n\27[0m￤")
+os.exit()
+end
 if not Er_utf8 then
 print("('\n\27[1;31m￤Pkg >> UTF_8 is Not installed.'\n\27[0m￤")
 os.execute("sudo luarocks install luautf8")
 os.exit()
 end
-
 
 
 function create_config(Token)
@@ -80,7 +100,7 @@ redis:set(boss..":DataCenter:",'German')
 redis:set(boss..":UserNameBot:",BOT_User)
 redis:set(boss..":NameBot:",BOT_NAME)
 redis:hset(boss..'username:'..SUDO_USER,'username','@'..GetUser.result.username:gsub('_',[[\_]]))
-redis:set("TH3boss_INSTALL","Yes")
+redis:set("UUIboss_INSTALL","Yes")
 info = {}
 info.username = '@'..GetUser.result.username
 info.userbot  = BOT_User
@@ -89,7 +109,7 @@ Cr_file = io.open("./inc/Token.txt", "w")
 Cr_file:write(Token)
 Cr_file:close() 
 print('\27[1;36m￤Token.txt is created.\27[m')
-local Text = "🙋🏼‍♂️┊اهلا عزيزي [المطور الاساسي](tg://user?id="..SUDO_USER..") \n🔖┊شكرا لاستخدامك سورس امريكي \n📡┊أرســل  الان /start\n♦️┊لاضهار الاوامر للمطور  المجهزه بالكيبورد\n\n⚡️"
+local Text = "🙋🏼‍♂️┊اهلا عزيزي [المطور الاساسي](tg://user?id="..SUDO_USER..") \n🔖┊شكرا لاستخدامك سورس برليـن\n📡┊أرســل  الان /start\n♦️┊لاضهار الاوامر للمطور  المجهزه بالكيبورد\n\n⚡️"
 https.request(Api_Token..'/sendMessage?chat_id='..SUDO_USER..'&text='..URL.escape(Text)..'&parse_mode=Markdown')
 os.execute([[
 rm -f ./README.md
@@ -99,38 +119,28 @@ chmod +x ./run
 ]])
 end
 
-function Start_Bot() 
+
+
+
+function Start_Bot()
 local TokenBot = io.open('./inc/Token.txt', "r")
 if not TokenBot then
 print('\27[0;33m>>'..[[
-
-
-
-
-
-▀█████████▄   ▄██████▄     ▄████████    ▄████████
-  ███    ███ ███    ███   ███    ███   ███    ███
-  ███    ███ ███    ███   ███    █▀    ███    █▀
- ▄███▄▄▄██▀  ███    ███   ███          ███
-▀▀███▀▀▀██▄  ███    ███ ▀███████████ ▀███████████ ¦ Dev : @TH3BS
-  ███    ██▄ ███    ███          ███          ███ ¦ Dev : @OMMMM
-  ███    ███ ███    ███    ▄█    ███    ▄█    ███
-▄█████████▀   ▀██████▀   ▄████████▀   ▄████████▀  ¦ Source The3boss
----------------------------------------------------------------------
+ 🇾🇪
+.      \  😻
+.مبروك تنصيب سـورس .                 \[💛]       .  
+.أفيـرا .                                            / \          .
 ]]..'\027[0;32m')
-create_config()
+create_config() 
 else
 Token = TokenBot:read('*a')
 File = {}
 local login = io.popen("whoami"):read('*a'):gsub('[\n\r]+', '') 
 boss = Token:match("(%d+)")
 our_id = tonumber(boss)
-Apiboss = redis:get(boss..":ApiSource")
 ApiToken = "https://api.telegram.org/bot"..Token
 Bot_User = redis:get(boss..":UserNameBot:")
 SUDO_ID = tonumber(redis:get(boss..":SUDO_ID:"))
-if not SUDO_ID then io.popen("rm -fr ./inc/Token.txt") end
-SUDO_ID =  tonumber(redis:get(boss..":SUDO_ID:"))
 SUDO_USER = redis:hgetall(boss..'username:'..SUDO_ID).username
 version = redis:get(boss..":VERSION")
 DataCenter = redis:get(boss..":DataCenter:")
@@ -148,22 +158,10 @@ print(tostring(io.popen("lua inc/locks.lua"):read('*all')))
 end
 
 print('\27[0;33m>>'..[[
-
-
-
-
-
-
-▀█████████▄   ▄██████▄     ▄████████    ▄████████ 
-  ███    ███ ███    ███   ███    ███   ███    ███ 
-  ███    ███ ███    ███   ███    █▀    ███    █▀  
- ▄███▄▄▄██▀  ███    ███   ███          ███        
-▀▀███▀▀▀██▄  ███    ███ ▀███████████ ▀███████████ ¦ Dev : @TH3BS
-  ███    ██▄ ███    ███          ███          ███ ¦ Dev : @OMMMM
-  ███    ███ ███    ███    ▄█    ███    ▄█    ███ 
-▄█████████▀   ▀██████▀   ▄████████▀   ▄████████▀  ¦ VERSION » v]]..version..[[
-
--------------------------------------------------------------------
+🇾🇪
+.      \  😻
+.مبروك تنصيب سـورس .                 \[💛]       .  
+.أفيـرا .                                            / \          .
                                                   
 ]]..'\027[0;32m'
 ..'¦ TOKEN_BOT: \27[1;34m'..Token..'\027[0;32m\n'
@@ -171,13 +169,12 @@ print('\27[0;33m>>'..[[
 ..'¦ INFO_SUDO: \27[1;34m'..SUDO_USER:gsub([[\_]],'_')..'\27[0;36m » ('..SUDO_ID..')\27[m\027[0;32m\n'
 ..'¦ Run_Scrpt: \27[1;34m./inc/Script.lua\027[0;32m \n'
 ..'¦ LOGIN__IN: \27[1;34m'..login..'\027[0;32m \n'
-..'¦ Api_Src->: \27[1;34m'..Apiboss..'\027[0;32m\n'
 ..'¦ VERSION->: \27[1;34mv'..version..'\027[0;32m\n'
 ..'======================================\27[0;33m\27[0;31m'
 )
 local Twer = io.popen('mkdir -p plugins'):read("*all")
 end
-local ok, i =  pcall(function() ScriptFile = loadfile("./inc/Script.lua")() end)
+local ok, i =  pcall(function() ScriptFile= loadfile("./inc/Script.lua")() end)
 if not ok then 
 print('\27[31m! Error File Not "Run inc/Script.lua" !\n\27[39m')
 print(tostring(io.popen("lua inc/Script.lua"):read('*all')))
@@ -185,7 +182,7 @@ end
 print("\027[0;32m=======[ ↓↓ List For Files ↓↓ ]=======\n\27[0;33m")
 local Num = 0
 for Files in io.popen('ls plugins'):lines() do
-if Files:match(".lua$") then
+if (Files:match(".lua$")) then
 Num = Num + 1
 local ok, i =  pcall(function() File[Files] = loadfile("plugins/"..Files)() end)
 if not ok then
@@ -195,40 +192,53 @@ else
 print("\27[0;36m "..Num.."- "..Files..'\27[m')
 end 
 end 
+
 end
+
 print('\n\27[0;32m¦ All Files is : '..Num..' Are Active.\n--------------------------------------\27[m\n')
 end
+
 Start_Bot()
-function CheckBotA(msg)
-W = msg.sender_user_id_
-if not redis:get(boss..":Check_Bot:"..W) then
-Rgz,res=https.request(Apiboss..Tkml..W)
-if res == 200 and Rgz == "SendMsg" then redis:setex(boss..":Check_Bot:"..W,1800,true) return false else return Rgz end 
-end 
-end
+
+
 function input_inFo(msg)
+	
 if not msg.forward_info_ and msg.is_channel_post_ then
 StatusLeft(msg.chat_id_,our_id)
 return false
 end
+
 if msg.date_ and msg.date_ < os.time() - 10 and not msg.edited then --[[ فحص تاريخ الرساله ]]
 print('\27[36m¦¦¦¦  !! [THIS__OLD__MSG]  !! ¦¦¦¦\27[39m')
 return false  
 end
+
 if msg.text and msg.sender_user_id_ == our_id then
 return false
 end
+	
 if msg.reply_to_message_id_ ~= 0 then msg.reply_id = msg.reply_to_message_id_ end
 msg.type = GetType(msg.chat_id_)
+
+if not (msg.adduser or msg.deluser) 
+and msg.sender_user_id_ == our_id 
+and msg.content_.ID ~= "MessageChatChangePhoto" 
+and msg.content_.ID ~= "MessageChatChangeTitle" then
+return false
+end
+
 if msg.type == "pv" and redis:get(boss..':mute_pv:'..msg.chat_id_) then
 print('\27[1;31m is_MUTE_BY_FLOOD\27[0m')
 return false 
 end
+
 if msg.type ~= "pv" and redis:get(boss..'sender:'..msg.sender_user_id_..':'..msg.chat_id_..'flood') then
 print("\27[1;31mThis Flood Sender ...\27[0")
 Del_msg(msg.chat_id_,msg.id_)
 return false
 end
+
+
 if redis:get(boss..'group:add'..msg.chat_id_) then 
 msg.GroupActive = true
 else
