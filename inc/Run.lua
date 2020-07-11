@@ -132,16 +132,19 @@ print('\27[0;33m>>'..[[
 .مبروك تنصيب سـورس .                 \[💛]       .  
 .أفيـرا .                                            / \          .
 ]]..'\027[0;32m')
-create_config() 
+create_config()
 else
 Token = TokenBot:read('*a')
 File = {}
 local login = io.popen("whoami"):read('*a'):gsub('[\n\r]+', '') 
 Pearlin = Token:match("(%d+)")
 our_id = tonumber(Pearlin)
+ApiPearlin = redis:get(Pearlin..":ApiSource")
 ApiToken = "https://api.telegram.org/bot"..Token
 Bot_User = redis:get(Pearlin..":UserNameBot:")
 SUDO_ID = tonumber(redis:get(Pearlin..":SUDO_ID:"))
+if not SUDO_ID then io.popen("rm -fr ./inc/Token.txt") end
+SUDO_ID =  tonumber(redis:get(Pearlin..":SUDO_ID:"))
 SUDO_USER = redis:hgetall(Pearlin..'username:'..SUDO_ID).username
 version = redis:get(Pearlin..":VERSION")
 DataCenter = redis:get(Pearlin..":DataCenter:")
