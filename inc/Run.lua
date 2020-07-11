@@ -16,7 +16,7 @@ http.TIMEOUT = 5
 JSON   = (loadfile "./libs/json.lua")()
 redis  = (loadfile "./libs/redis.lua")()
 URL    = (loadfile "./libs/url.lua")()
-json  = dofile('./inc/JSON.lua')()
+json  = dofile('./inc/JSON.lua')
 Er_utf8  , utf8  = pcall(require, "lua-utf8")
 redis = redis.connect('127.0.0.1',6379)
 
