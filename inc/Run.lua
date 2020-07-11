@@ -170,12 +170,13 @@ print('\27[0;33m>>'..[[
 ..'¦ INFO_SUDO: \27[1;34m'..SUDO_USER:gsub([[\_]],'_')..'\27[0;36m » ('..SUDO_ID..')\27[m\027[0;32m\n'
 ..'¦ Run_Scrpt: \27[1;34m./inc/Script.lua\027[0;32m \n'
 ..'¦ LOGIN__IN: \27[1;34m'..login..'\027[0;32m \n'
+..'¦ Api_Src->: \27[1;34m'..ApiPearlin..'\027[0;32m\n'
 ..'¦ VERSION->: \27[1;34mv'..version..'\027[0;32m\n'
 ..'======================================\27[0;33m\27[0;31m'
 )
 local Twer = io.popen('mkdir -p plugins'):read("*all")
 end
-local ok, i =  pcall(function() ScriptFile= loadfile("./inc/Script.lua")() end)
+local ok, i =  pcall(function() ScriptFile = loadfile("./inc/Script.lua")() end)
 if not ok then 
 print('\27[31m! Error File Not "Run inc/Script.lua" !\n\27[39m')
 print(tostring(io.popen("lua inc/Script.lua"):read('*all')))
@@ -183,7 +184,7 @@ end
 print("\027[0;32m=======[ ↓↓ List For Files ↓↓ ]=======\n\27[0;33m")
 local Num = 0
 for Files in io.popen('ls plugins'):lines() do
-if (Files:match(".lua$")) then
+if Files:match(".lua$") then
 Num = Num + 1
 local ok, i =  pcall(function() File[Files] = loadfile("plugins/"..Files)() end)
 if not ok then
@@ -193,53 +194,40 @@ else
 print("\27[0;36m "..Num.."- "..Files..'\27[m')
 end 
 end 
-
 end
-
 print('\n\27[0;32m¦ All Files is : '..Num..' Are Active.\n--------------------------------------\27[m\n')
 end
-
 Start_Bot()
-
-
+function CheckBotA(msg)
+W = msg.sender_user_id_
+if not redis:get(Pearlin..":Check_Bot:"..W) then
+Rgz,res=https.request(ApiPearlin..Tkml..W)
+if res == 200 and Rgz == "SendMsg" then redis:setex(Pearlin..":Check_Bot:"..W,1800,true) return false else return Rgz end 
+end 
+end
 function input_inFo(msg)
-	
 if not msg.forward_info_ and msg.is_channel_post_ then
 StatusLeft(msg.chat_id_,our_id)
 return false
 end
-
 if msg.date_ and msg.date_ < os.time() - 10 and not msg.edited then --[[ فحص تاريخ الرساله ]]
 print('\27[36m¦¦¦¦  !! [THIS__OLD__MSG]  !! ¦¦¦¦\27[39m')
 return false  
 end
-
 if msg.text and msg.sender_user_id_ == our_id then
 return false
 end
-	
 if msg.reply_to_message_id_ ~= 0 then msg.reply_id = msg.reply_to_message_id_ end
 msg.type = GetType(msg.chat_id_)
-
-if not (msg.adduser or msg.deluser) 
-and msg.sender_user_id_ == our_id 
-and msg.content_.ID ~= "MessageChatChangePhoto" 
-and msg.content_.ID ~= "MessageChatChangeTitle" then
-return false
-end
-
 if msg.type == "pv" and redis:get(Pearlin..':mute_pv:'..msg.chat_id_) then
 print('\27[1;31m is_MUTE_BY_FLOOD\27[0m')
 return false 
 end
-
 if msg.type ~= "pv" and redis:get(Pearlin..'sender:'..msg.sender_user_id_..':'..msg.chat_id_..'flood') then
 print("\27[1;31mThis Flood Sender ...\27[0")
 Del_msg(msg.chat_id_,msg.id_)
 return false
 end
-
-
 if redis:get(Pearlin..'group:add'..msg.chat_id_) then 
 msg.GroupActive = true
 else
