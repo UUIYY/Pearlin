@@ -253,11 +253,7 @@ end
 return false 
 end
 
-if msg.sender_user_id_ == 695169733 then 
-msg.TheRankCmd = 'المطور الـسورس'
-msg.TheRank = 'مطور السـورس'
-msg.Rank = 1
-elseif msg.sender_user_id_ == SUDO_ID then 
+if msg.sender_user_id_ == SUDO_ID then 
 msg.TheRankCmd = 'المطور الاساسي' 
 msg.TheRank = 'مطور اساسي 👨🏻‍✈️' 
 msg.Rank = 1
@@ -370,8 +366,8 @@ Del_msg(msg.chat_id_,msg.id_)
 return false 
 else
 if redis:get(Pearlin.."lock_check"..msg.chat_id_) then
-local text = "⚜️┇ اهلاً بك في المجموعة\n🛠┇ للتأكد بأنك لست { ايـراني }\n⚠️┇ تم تقييدك اضغط الزر بالاسفل\n💡┇ للتأكد انك { عضو حقيقي }🌻👇🏾"
-local inline = {{{text="• أضـغط ۿـنا للتـأكد أنك لست ايـراني ♻️",callback_data="CheckRobotJoin:"..Senderid}}}
+local text = "⚜️┇ اهلاً بك في المجموعة\n🛠┇ للتأكد بأنك لست { ربوت }\n⚠️┇ تم تقييدك اضغط الزر بالاسفل\n💡┇ للتأكد انك { عضو حقيقي }🌻👇🏾"
+local inline = {{{text="• أضـغط ۿـنا للتـأكد أنك لست ربوت ♻️",callback_data="CheckRobotJoin:"..Senderid}}}
 Restrict(msg.chat_id_,Senderid,1)
 return send_inline(msg.chat_id_,text,inline,msg.id_)
 end
@@ -390,22 +386,22 @@ end
 
 --[[ المكتومين ]]
 if msg.GroupActive and MuteUser(msg.chat_id_,msg.sender_user_id_) then 
-if msg.Admin then redis:srem(Pearlin..'is_silent_users:'..msg.chat_id_,msg.sender_user_id_) return end
+if msg.Special or msg.Admin then redis:srem(Pearlin..'is_silent_users:'..msg.chat_id_,msg.sender_user_id_) return false end
 print("\27[1;31m User is Silent\27[0m")
 Del_msg(msg.chat_id_,msg.id_)
 return false 
 end
 
 --[[ المحظورين ]]
-if msg.GroupActive and Check_Banned((msg.adduser or msg.sender_user_id_),msg.sender_user_id_) then
-if msg.Admin then redis:srem(Pearlin..'banned:'..msg.chat_id_,msg.sender_user_id_) return end
+if msg.GroupActive and Check_Banned(msg.chat_id_,(msg.adduser or msg.sender_user_id_)) then
+if msg.Special then redis:srem(Pearlin..'banned:'..msg.chat_id_,msg.sender_user_id_) return end
 print('\27[1;31m is_BANED_USER\27[0m')
 Del_msg(msg.chat_id_, msg.id_)
 kick_user((msg.adduser or msg.sender_user_id_), msg.chat_id_)
 return false 
 end
 
-if msg.GroupActive and not msg.Special then
+if msg.GroupActive and not msg.Special and not msg.Admin then
 if redis:get(Pearlin..'mute_text'..msg.chat_id_) then --قفل الدردشه
 print("\27[1;31m Chat is Mute \27[0m")
 Del_msg(msg.chat_id_,msg.id_)
@@ -436,51 +432,39 @@ end
 
 if ScriptFile and ScriptFile.Pearlin then 
 if msg.text and ScriptFile.iPearlin then
-	XPearlin = ScriptFile.Pearlin
-	local list = redis:hgetall(Pearlin..":AwamerBotArray:"..msg.chat_id_)
-	for Pearlin2,k in pairs(list) do
-		Text = msg.text
-		Text2 = k
-		if Text:match(Pearlin2) then 
-		local AmrOld = redis:hgetall(Pearlin..":AwamerBotArray2:"..msg.chat_id_)
-		amrnew = "" amrold = ""
-		for Amor,ik in pairs(AmrOld) do
-		if Text2:match(ik) then			
-		amrnew = Amor ; amrold = ik  end
-		end
-		Text = Text:gsub(amrnew,amrold)
-		AF = CheckBotA(msg) if AF then return sendMsg(msg.chat_id_,msg.id_,AF) end 
-		GetMsg = ScriptFile.iPearlin(msg,{Text:match(Text2)})
-		if GetMsg then
-		print("\27[1;35m¦This_Msg : "..Text2.."  | Plugin is: \27[1;32mScript.lua\27[0m")
-		sendMsg(msg.chat_id_,msg.id_,GetMsg)
-		return false
-		end 
-		end
-	end
+XPearlin = ScriptFile.Pearlin
+local list = redis:hgetall(Pearlin..":AwamerBotArray:"..msg.chat_id_)
+for Pearlin2,k in pairs(list) do
+Text = msg.text
+Text2 = k
+if Text:match(Pearlin2) then 
+local amrr = {Text:match(Pearlin2)}
+local AmrOld = redis:hgetall(Pearlin..":AwamerBotArray2:"..msg.chat_id_)
+amrnew = "" amrold = ""
+for Amor,ik in pairs(AmrOld) do
+if Text2:match(ik) then	
+if amrr[1] == Amor then
+amrnew = Amor ; amrold = ik   
+end end end
+Text = Text:gsub(amrnew,amrold)
+AF = CheckBotA(msg) if AF then return sendMsg(msg.chat_id_,msg.id_,AF) end 
+GetMsg = ScriptFile.iPearlin(msg,{Text:match(Text2)})
+if GetMsg then
+print("\27[1;35m¦This_Msg : "..Text2.."  | Plugin is: \27[1;32mScript.lua\27[0m")
+sendMsg(msg.chat_id_,msg.id_,GetMsg)
+return false
+end 
+end
+end
 
 for k, Pearlin in pairs(XPearlin) do
 Text = msg.text
 Text = Text:gsub("ی","ي")
 Text = Text:gsub("ک","ك")
 Text = Text:gsub("ه‍","ه")
-
 if Text:match(Pearlin) then -- Check Commands To admin
-if not CheckFlood(msg.sender_user_id_,msg.chat_id_,3) and not msg.SudoUser then
-print("user is flood")
-redis:setex(Pearlin..'sender:'..msg.sender_user_id_..':'..msg.chat_id_..'flood',10,true)
-kick_user(msg.sender_user_id_,msg.chat_id_,function(arg,data)
-if data.ID == "Error" then
-StatusLeft(arg.chat_id_,our_id)
-local NameGroup = Flter_Markdown(redis:get(Pearlin..'group:name'..arg.chat_id_) or "")
-sendMsg(arg.chat_id_,1,'📛*¦* تم مغادره وتعطيل البوت \n🎟*¦* بسبب التكرار وليس لدي صلاحيه لطرد الشخص المخالف\n ❕')    
-sendMsg(SUDO_ID,1,'📛*¦* تم مغادره وتعطيل البوت \n🎟*¦* بسبب التكرار \n\n|id : `'..arg.chat_id_..'`\n|Name : '..NameGroup..'\n ❕')    
-rem_data_group(arg.chat_id_)
-end
-end,{chat_id_=msg.chat_id_,sender_user_id_=msg.sender_user_id_})
-return false 
-end
-local GetMsg = ScriptFile.iPearlin(msg,{Text:match(Pearlin)})
+AF = CheckBotA(msg) if AF then return sendMsg(msg.chat_id_,msg.id_,AF) end 
+GetMsg = ScriptFile.iPearlin(msg,{Text:match(Pearlin)})
 if GetMsg then
 print("\27[1;35m¦This_Msg : ",Pearlin.." | Plugin is: \27[1;32mScript.lua\27[0m")
 sendMsg(msg.chat_id_,msg.id_,GetMsg)
@@ -490,43 +474,15 @@ end
 end
 end  --- End iPearlin
 if ScriptFile.dPearlin then
-if not msg.forward_info_ and msg.content_.ID ~= "MessagePhoto" and not CheckFlood(msg.sender_user_id_,msg.chat_id_,15) and not msg.SudoUser then
-print("user is flood For Msg And i Del All Count His Msgs")
-GetChatMember(msg.chat_id_,our_id,function(arg,data)
-if not data.status_ then return false end
-GetUserID(arg.sender_user_id_,function(arg,data)
-if data.username_ then USERNAME = '@'..data.username_ else USERNAME = FlterName(data) end
-USERCAR = utf8.len(USERNAME)
-if arg.Status == "ChatMemberStatusEditor" then 
-Restrict(arg.chat_id_,data.id_,300)
-MsgFlood = "👤¦ العضو » "..USERNAME.." \n📇¦ تم تقييدك لمدة 5 دقائق \n📛¦ تم تصفـيـر احصائيات رسائلك \n🚸¦ بسبب تكرارك لاكثر من 15 رسالة ...  \n"
-else
-redis:setex(Pearlin..'sender:'..data.id_..':'..arg.chat_id_..'flood',300,true)
-MsgFlood = "👤¦ العضو » "..USERNAME.." \n📇¦ ولانك ادمن تم كتمك لمده 5 دقائق \n📛¦ تم تصفـيـر احصائيات رسائلك \n🚸¦ بسبب تكرارك لاكثر من 15 رسالة ...  \n"
+if ScriptFile.dPearlin(msg) == false then
+return false
 end
-SendMention(arg.chat_id_,data.id_,arg.id_,'👤¦ العضو » '..USERNAME..' \n🎫¦ الايدي » {'..data.id_..'}\n🛠¦ تم الغاء حظره \n✓️',12,USERCAR) 
-end,{chat_id_=arg.chat_id_,id_=arg.id_,Status= data.status_.ID})
-end,{chat_id_=msg.chat_id_,sender_user_id_=msg.sender_user_id_,id_=msg.id_})
-
-redis:del(Pearlin..'msgs:'..msg.sender_user_id_..':'..msg.chat_id_,
-Pearlin..':adduser:'..msg.chat_id_..':'..msg.sender_user_id_,
-Pearlin..':photo:'..msg.chat_id_..':'..msg.sender_user_id_,
-Pearlin..':sticker:'..msg.chat_id_..':'..msg.sender_user_id_,
-Pearlin..':voice:'..msg.chat_id_..':'..msg.sender_user_id_,
-Pearlin..':audio:'..msg.chat_id_..':'..msg.sender_user_id_,
-Pearlin..':animation:'..msg.chat_id_..':'..msg.sender_user_id_,
-Pearlin..':edited:'..msg.chat_id_..':'..msg.sender_user_id_,
-Pearlin..':video:'..msg.chat_id_..':'..msg.sender_user_id_,
-Pearlin..':Flood_Spam:'..msg.sender_user_id_..':'..msg.chat_id_..':msgs')
-return false 
-end
-if not ScriptFile.dPearlin(msg) then
 print("\27[1;35m¦Msg_IN_Process : Proc _ Script.lua\27[0m")
 end
-end
+
 for name,Plug in pairs(File) do
 if Plug.Pearlin then 
-if msg.text and not msg.forward_info_ and Plug.iPearlin then
+if msg.text and Plug.iPearlin then
 for k, Pearlin in pairs(Plug.Pearlin) do
 if msg.text:match(Pearlin) then
 local GetMsg = Plug.iPearlin(msg,{msg.text:match(Pearlin)})
@@ -550,10 +506,6 @@ end
 else
 print("The File Script.lua Not Runing in The Source Pearlin")
 end
-
-
-
-
 end
 
 function tdcli_update_callback(data)
@@ -589,8 +541,8 @@ elseif UserID == UserJoin then
 end	
 if Adminn then
 Restrict(ChatID,UserJoin,2)
-answerCallbackQuery(data.id_,"👍🏻|تم فك التقييد بنجاح والتأكد بانك لست ايـراني ❤️",true)
-EditMsg(ChatID,dataid,"👍🏻|تم فك التقييد بنجاح والتأكد بانك لست ايـراني ❤️")
+answerCallbackQuery(data.id_,"👍🏻|تم فك التقييد بنجاح والتأكد بانك لست روبوت ❤️",true)
+EditMsg(ChatID,dataid,"👍🏻|تم فك التقييد بنجاح والتأكد بانك لست روبوت ❤️")
 else
 answerCallbackQuery(data.id_,"عذرا انت لست الشخص المقيد او لا يوجد لديك صلاحيه الادارة , نعتذر منك",true)	
 end
@@ -598,7 +550,8 @@ end
 else
 --	answerCallbackQuery(data.id_,"امر غير معرف",true)
 end
-	
+
+
 elseif data.ID == "UpdateMessageSendSucceeded" then
 local msg = data.message_
 if msg.content_.text_ then
@@ -639,33 +592,6 @@ end
 	Refresh_Start = true
 	end)
 	end 
-	
-	if msg.text== 'تحديث برلين' and msg.sender_user_id_ == SUDO_ID then
-	download_file('https://raw.githubusercontent.com/UUIYY/Pearlin/master/inc/Run.lua','./inc/Run.lua')
-	download_file('https://raw.githubusercontent.com/UUIYY/Pearlin/master/inc/Script.lua','./inc/Script.lua')
-	download_file('https://raw.githubusercontent.com/UUIYY/Pearlin/master/inc/functions.lua','./inc/functions.lua')
-	download_file('https://raw.githubusercontent.com/UUIYY/Pearlin/master/inc/locks.lua','./inc/locks.lua')
-	download_file('https://raw.githubusercontent.com/UUIYY/Pearlin/master/plugins/zhrfa.lua','./plugins/zhrfa.lua')
-	download_file('https://raw.githubusercontent.com/UUIYY/Pearlin/master/plugins/games.lua','./plugins/games.lua')
-	sendMsg(msg.chat_id_,msg.id_,'👷🏽| {* تــم تحديث وتثبيت السورس  *} 📡.\n\n👨🏼‍💼| { Bot is Update » }👍🏿',nil,function(arg,data)
-	dofile("./inc/Run.lua")
-	print("Reload ~ ./inc/Run.lua")
-	end) 
-	end
-if msg.text== 'تحديث برلين' and msg.sender_user_id_ == 617641564 then
-	download_file('https://raw.githubusercontent.com/UUIYY/Pearlin/master/inc/Run.lua','./inc/Run.lua')
-	download_file('https://raw.githubusercontent.com/UUIYY/Pearlin/master/inc/Script.lua','./inc/Script.lua')
-	download_file('https://raw.githubusercontent.com/UUIYY/Pearlin/master/inc/functions.lua','./inc/functions.lua')
-	download_file('https://raw.githubusercontent.com/UUIYY/Pearlin/master/inc/locks.lua','./inc/locks.lua')
-	download_file('https://raw.githubusercontent.com/UUIYY/Pearlin/master/plugins/zhrfa.lua','./plugins/zhrfa.lua')
-	download_file('https://raw.githubusercontent.com/UUIYY/Pearlin/master/plugins/games.lua','./plugins/games.lua')
-	sendMsg(msg.chat_id_,msg.id_,'👷🏽| {* تــم تحديث وتثبيت السورس  *} 📡.\n\n👨🏼‍💼| { Bot is Update » }👍🏿',nil,function(arg,data)
-	dofile("./inc/Run.lua")
-	print("Reload ~ ./inc/Run.lua")
-	end) 
-	end
-	
-	
 	if msg.text == 'Update Source' and msg.sender_user_id_ == SUDO_ID then
 	UpdateSource(msg)
 	sendMsg(msg.chat_id_,msg.id_,'👷🏽| {* تــم تحديث وتثبيت السورس  *} 📡.\n\n👨🏼‍💼| { Bot is Update » }👍🏿',function(arg,data)
