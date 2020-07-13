@@ -484,7 +484,7 @@ end
 
 for name,Plug in pairs(File) do
 if Plug.Pearlin then 
-if msg.text and Plug.iPearlin then
+if msg.text and not msg.forward_info_ and Plug.iPearlin then
 for k, Pearlin in pairs(Plug.Pearlin) do
 if msg.text:match(Pearlin) then
 local GetMsg = Plug.iPearlin(msg,{msg.text:match(Pearlin)})
@@ -508,6 +508,10 @@ end
 else
 print("The File Script.lua Not Runing in The Source Pearlin")
 end
+
+
+
+
 end
 
 function tdcli_update_callback(data)
