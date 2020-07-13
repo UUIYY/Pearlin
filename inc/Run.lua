@@ -464,9 +464,23 @@ Text = msg.text
 Text = Text:gsub("ی","ي")
 Text = Text:gsub("ک","ك")
 Text = Text:gsub("ه‍","ه")
+
 if Text:match(Pearlin) then -- Check Commands To admin
-AF = CheckBotA(msg) if AF then return sendMsg(msg.chat_id_,msg.id_,AF) end 
-GetMsg = ScriptFile.iPearlin(msg,{Text:match(Pearlin)})
+if not CheckFlood(msg.sender_user_id_,msg.chat_id_,3) and not msg.SudoUser then
+print("user is flood")
+redis:setex(Pearlin..'sender:'..msg.sender_user_id_..':'..msg.chat_id_..'flood',10,true)
+kick_user(msg.sender_user_id_,msg.chat_id_,function(arg,data)
+if data.ID == "Error" then
+StatusLeft(arg.chat_id_,our_id)
+local NameGroup = Flter_Markdown(redis:get(Pearlin..'group:name'..arg.chat_id_) or "")
+sendMsg(arg.chat_id_,1,'📛*¦* تم مغادره وتعطيل البوت \n🎟*¦* بسبب التكرار وليس لدي صلاحيه لطرد الشخص المخالف\n ❕')    
+sendMsg(SUDO_ID,1,'📛*¦* تم مغادره وتعطيل البوت \n🎟*¦* بسبب التكرار \n\n|id : `'..arg.chat_id_..'`\n|Name : '..NameGroup..'\n ❕')    
+rem_data_group(arg.chat_id_)
+end
+end,{chat_id_=msg.chat_id_,sender_user_id_=msg.sender_user_id_})
+return false 
+end
+local GetMsg = ScriptFile.iPearlin(msg,{Text:match(Pearlin)})
 if GetMsg then
 print("\27[1;35m¦This_Msg : ",Pearlin.." | Plugin is: \27[1;32mScript.lua\27[0m")
 sendMsg(msg.chat_id_,msg.id_,GetMsg)
@@ -476,12 +490,40 @@ end
 end
 end  --- End iPearlin
 if ScriptFile.dPearlin then
-if ScriptFile.dPearlin(msg) == false then
-return false
+if not msg.forward_info_ and msg.content_.ID ~= "MessagePhoto" and not CheckFlood(msg.sender_user_id_,msg.chat_id_,15) and not msg.SudoUser then
+print("user is flood For Msg And i Del All Count His Msgs")
+GetChatMember(msg.chat_id_,our_id,function(arg,data)
+if not data.status_ then return false end
+GetUserID(arg.sender_user_id_,function(arg,data)
+if data.username_ then USERNAME = '@'..data.username_ else USERNAME = FlterName(data) end
+USERCAR = utf8.len(USERNAME)
+if arg.Status == "ChatMemberStatusEditor" then 
+Restrict(arg.chat_id_,data.id_,300)
+MsgFlood = "👤¦ العضو » "..USERNAME.." \n📇¦ تم تقييدك لمدة 5 دقائق \n📛¦ تم تصفـيـر احصائيات رسائلك \n🚸¦ بسبب تكرارك لاكثر من 15 رسالة ...  \n"
+else
+redis:setex(Pearlin..'sender:'..data.id_..':'..arg.chat_id_..'flood',300,true)
+MsgFlood = "👤¦ العضو » "..USERNAME.." \n📇¦ ولانك ادمن تم كتمك لمده 5 دقائق \n📛¦ تم تصفـيـر احصائيات رسائلك \n🚸¦ بسبب تكرارك لاكثر من 15 رسالة ...  \n"
 end
+SendMention(arg.chat_id_,data.id_,arg.id_,'👤¦ العضو » '..USERNAME..' \n🎫¦ الايدي » {'..data.id_..'}\n🛠¦ تم الغاء حظره \n✓️',12,USERCAR) 
+end,{chat_id_=arg.chat_id_,id_=arg.id_,Status= data.status_.ID})
+end,{chat_id_=msg.chat_id_,sender_user_id_=msg.sender_user_id_,id_=msg.id_})
+
+redis:del(Pearlin..'msgs:'..msg.sender_user_id_..':'..msg.chat_id_,
+Pearlin..':adduser:'..msg.chat_id_..':'..msg.sender_user_id_,
+Pearlin..':photo:'..msg.chat_id_..':'..msg.sender_user_id_,
+Pearlin..':sticker:'..msg.chat_id_..':'..msg.sender_user_id_,
+Pearlin..':voice:'..msg.chat_id_..':'..msg.sender_user_id_,
+Pearlin..':audio:'..msg.chat_id_..':'..msg.sender_user_id_,
+Pearlin..':animation:'..msg.chat_id_..':'..msg.sender_user_id_,
+Pearlin..':edited:'..msg.chat_id_..':'..msg.sender_user_id_,
+Pearlin..':video:'..msg.chat_id_..':'..msg.sender_user_id_,
+Pearlin..':Flood_Spam:'..msg.sender_user_id_..':'..msg.chat_id_..':msgs')
+return false 
+end
+if not ScriptFile.dPearlin(msg) then
 print("\27[1;35m¦Msg_IN_Process : Proc _ Script.lua\27[0m")
 end
-
+end
 for name,Plug in pairs(File) do
 if Plug.Pearlin then 
 if msg.text and not msg.forward_info_ and Plug.iPearlin then
