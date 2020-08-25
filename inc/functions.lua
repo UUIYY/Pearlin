@@ -436,7 +436,7 @@ print("Update Source And Reload ~ ./inc/Run.lua")
 
 end
 ----------------------{ Get Name Bot }-----------------------------
-Bot_Name = redis:get(Pearlin..":NameBot:") or "الزعيم"
+Bot_Name = redis:get(Pearlin..":NameBot:") or "برلـينَ"
 
 
 function GetType(ChatID) 
@@ -1424,7 +1424,7 @@ end
 if NumAdmin == 0 then 
 return sendMsg(arg.chat_id_,arg.id_,"📮¦ لا يـوجـد أدمـنـيـه لكي يتـم ترقيتهم \n")
 else
-return sendMsg(arg.chat_id_,arg.id_,"📮¦ تم رفع  { *"..NumAdmin.."* } مـن آلآدمـنيهہ‌‏ في آلبوت \n✓️")
+return sendMsg(arg.chat_id_,arg.id_,"📮¦ تم رفع  { *"..NumAdmin.."* } مـن آلآدمـنيهہ‌‏ في آلبوت ➻ ️")
 end
 end,30,{chat_id_=msg.chat_id_,id_=msg.id_})
 end
@@ -1446,7 +1446,7 @@ if msg.type ~= "channel" then return '🚸¦ البوت يعمل فقط في ا�
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
-if redis:get(Pearlin..'group:add'..msg.chat_id_) then  return sendMsg(msg.chat_id_,msg.id_,'📮¦ بواسطه ⋙「 '..NameUser..' 」 \n📬¦ المجموعه بالتأكيد ✓️ تم تفعيلها \n✓️') end
+if redis:get(Pearlin..'group:add'..msg.chat_id_) then  return sendMsg(msg.chat_id_,msg.id_,'📮¦ بواسطه ⋙【 '..NameUser..' 】 \n📬¦ المجموعه بالتأكيد ✓️ تم تفعيلها ➻ ️') end
 
 local UserChaneel = redis:get(Pearlin..":UserNameChaneel")
 if UserChaneel and not msg.SudoBase then
@@ -1480,9 +1480,9 @@ if data.channel_ and data.channel_.status_.ID  == "ChatMemberStatusMember" then
 return sendMsg(arg.chat_id_,arg.id_,'📛*¦* عذرا البوت ليس ادمن  في المجموعه ♨️\n🔙*¦* يرجى ترقيته ادمن لتتمكن من تفعيل البوت ✓️')
 end
 if arg.lock_servicez then 
-sendMsg(arg.chat_id_,arg.id_,'📮¦ بواسطه ⋙「 '..NameUser..' 」 \n📬¦ تـم تـفـعـيـل الـمـجـمـوعـه ✓️ \n👨🏽‍🔧¦ وتم رفع جمـيع آلآدمـنيهہ‏‏‏ آلگروب بآلبوت \n✓')
+sendMsg(arg.chat_id_,arg.id_,'📮¦ بواسطه ⋙【 '..NameUser..' 】 \n📬¦ تـم تـفـعـيـل الـمـجـمـوعـه ✓️ \n👨🏽‍🔧¦ وتم رفع جمـيع آلآدمـنيهہ‏‏‏ آلگروب بآلبوت ➻ ')
 else
-sendMsg(arg.chat_id_,arg.id_,'📮¦ بواسطه ⋙「 '..NameUser..' 」 \n📬¦ تـم تـفـعـيـل آلمـجمـوعهہ‏‏ \n✓️')
+sendMsg(arg.chat_id_,arg.id_,'📮¦ بواسطه ⋙【 '..NameUser..' 】 \n📬¦ تـم تـفـعـيـل آلمـجمـوعهہ‏‏ ➻ ️')
 end
 
 GetChannelAdministrators(arg.chat_id_,function(arg,data)
@@ -1613,75 +1613,75 @@ end
 Restrict(ChatID,UserID,1)
 redis:hset(Pearlin..'username:'..UserID, 'username', Resolv)
 redis:sadd(Pearlin..':tqeed:'..ChatID,UserID)
-return sendMsg(ChatID,MsgID,"📮¦ المستخدم  ⋙「 "..NameUser.." 」 \n⛔️¦ تم تقييده بنجاح \n✓")
+return sendMsg(ChatID,MsgID,"✧ العضـو ➻【 "..NameUser.." 】 \n⛔️¦ تم تقييده بنجاح ➻ ")
 end 
 if cmd =="fktqeed" then
 Restrict(ChatID,UserID,2)
 redis:srem(Pearlin..':tqeed:'..ChatID,UserID)
-return sendMsg(ChatID,MsgID,"📮¦ المستخدم  ⋙「 "..NameUser.." 」 \n⛔️¦ تم فك تقييده بنجاح \n✓")
+return sendMsg(ChatID,MsgID,"✧ العضـو ➻【 "..NameUser.." 】 \n⛔️¦ تم فك تقييده بنجاح ➻ ")
 end
 if cmd == "setwhitelist" then
 if redis:sismember(Pearlin..'whitelist:'..ChatID,UserID) then 
-return sendMsg(ChatID,MsgID,"📮¦ المستخدم  ⋙「 "..NameUser.." 」 \n📋¦ تم بالتأكيد ترقيته مميز  في المجموعه \n✓") 
+return sendMsg(ChatID,MsgID,"✧ العضـو ➻【 "..NameUser.." 】 \n✧ تـم بالتأكيد ترقيته مميز  في المجموعه ➻ ") 
 end
 redis:hset(Pearlin..'username:'..UserID, 'username', Resolv)
 redis:sadd(Pearlin..'whitelist:'..ChatID,UserID)
-return sendMsg(ChatID,MsgID,"📮¦ المستخدم  ⋙「 "..NameUser.." 」 \n📋¦ تم ترقيته مميز  في المجموعه \n✓") 
+return sendMsg(ChatID,MsgID,"✧ العضـو ➻【 "..NameUser.." 】 \n✧ تـم ترقيته مميز  في المجموعه ➻ ") 
 end
 if cmd == "remwhitelist" then
 if not redis:sismember(Pearlin..'whitelist:'..ChatID,UserID) then 
-return sendMsg(ChatID,MsgID,"📮¦ المستخدم  ⋙「 "..NameUser.." 」 \n📋¦ تم بالتأكيد تنزيله مميز  في المجموعه \n✓") 
+return sendMsg(ChatID,MsgID,"✧ العضـو ➻【 "..NameUser.." 】 \n✧ تـم بالتأكيد تنزيله مميز  في المجموعه ➻ ") 
 end
 redis:srem(Pearlin..'whitelist:'..ChatID,UserID)
-return sendMsg(ChatID,MsgID,"📮¦ المستخدم  ⋙「 "..NameUser.." 」 \n📋¦ تم تنزيله مميز  في المجموعه \n✓") 
+return sendMsg(ChatID,MsgID,"✧ العضـو ➻【 "..NameUser.." 】 \n✧ تـم تنزيله مميز  في المجموعه ➻ ") 
 end
 if cmd == "setmnsha" then
 if redis:sismember(Pearlin..':MONSHA_BOT:'..ChatID,UserID) then 
-return sendMsg(ChatID,MsgID,"📮¦ المستخدم  ⋙「 "..NameUser.." 」 \n📋¦ تم بالتأكيد ترقيته منشئ  في المجموعه \n✓") 
+return sendMsg(ChatID,MsgID,"✧ العضـو ➻【 "..NameUser.." 】 \n✧ تـم بالتأكيد ترقيته منشئ  في المجموعه ➻ ") 
 end
 redis:hset(Pearlin..'username:'..UserID, 'username', Resolv)
 redis:sadd(Pearlin..':MONSHA_BOT:'..ChatID,UserID)
-return sendMsg(ChatID,MsgID,"📮¦ المستخدم  ⋙「 "..NameUser.." 」 \n📋¦ تم ترقيته منشئ  في المجموعه \n✓") 
+return sendMsg(ChatID,MsgID,"✧ العضـو ➻【 "..NameUser.." 】 \n✧ تـم ترقيته منشئ  في المجموعه ➻ ") 
 end
 if cmd == "remmnsha" then
 if not redis:sismember(Pearlin..':MONSHA_BOT:'..ChatID,UserID) then 
-return sendMsg(ChatID,MsgID,"📮¦ المستخدم  ⋙「 "..NameUser.." 」 \n📋¦ تم بالتأكيد تنزيله منشئ  في المجموعه \n✓") 
+return sendMsg(ChatID,MsgID,"✧ العضـو ➻【 "..NameUser.." 】 \n✧ تـم بالتأكيد تنزيله منشئ  في المجموعه ➻ ") 
 end
 redis:srem(Pearlin..':MONSHA_BOT:'..ChatID,UserID)
-return sendMsg(ChatID,MsgID,"📮¦ المستخدم  ⋙「 "..NameUser.." 」 \n📋¦ تم تنزيله منشى  في المجموعه \n✓") 
+return sendMsg(ChatID,MsgID,"✧ العضـو ➻【 "..NameUser.." 】 \n✧ تـم تنزيله منشى  في المجموعه ➻ ") 
 end
 
 if cmd == "setowner" then
 if redis:sismember(Pearlin..'owners:'..ChatID,UserID) then 
-return sendMsg(ChatID,MsgID,"📮¦ المستخدم  ⋙「 "..NameUser.." 」 \n📋¦ تم بالتأكيد ترقيته مدير  في المجموعه \n✓") 
+return sendMsg(ChatID,MsgID,"✧ العضـو ➻【 "..NameUser.." 】 \n✧ تـم بالتأكيد ترقيته مدير  في المجموعه ➻ ") 
 end
 Resolv = Resolv:gsub([[\_]],"_")
 redis:hset(Pearlin..'username:'..UserID, 'username', Resolv)
 redis:sadd(Pearlin..'owners:'..ChatID,UserID)
-return sendMsg(ChatID,MsgID,"📮¦ المستخدم  ⋙「 "..NameUser.." 」 \n📋¦ تم ترقيته مدير  في المجموعه \n✓") 
+return sendMsg(ChatID,MsgID,"✧ العضـو ➻【 "..NameUser.." 】 \n✧ تـم ترقيته مدير  في المجموعه ➻ ") 
 end
 if cmd == "remowner" then
 if not redis:sismember(Pearlin..'owners:'..ChatID,UserID) then 
-return sendMsg(ChatID,MsgID,"📮¦ المستخدم  ⋙「 "..NameUser.." 」 \n📋¦ تم بالتأكيد تنزيله مدير  في المجموعه \n✓") 
+return sendMsg(ChatID,MsgID,"✧ العضـو ➻【 "..NameUser.." 】 \n✧ تـم بالتأكيد تنزيله مدير  في المجموعه ➻ ") 
 end
 redis:srem(Pearlin..'owners:'..ChatID,UserID)
-return sendMsg(ChatID,MsgID,"📮¦ المستخدم  ⋙「 "..NameUser.." 」 \n📋¦ تم تنزيله مدير  في المجموعه \n✓") 
+return sendMsg(ChatID,MsgID,"✧ العضـو ➻【 "..NameUser.." 】 \n✧ تـم تنزيله مدير  في المجموعه ➻ ") 
 end
 if cmd == "promote" then
 if redis:sismember(Pearlin..'admins:'..ChatID,UserID) then 
-return sendMsg(ChatID,MsgID,"📮¦ المستخدم  ⋙「 "..NameUser.." 」 \n📋¦ تم بالتأكيد ترقيته ادمن  في المجموعه \n✓") 
+return sendMsg(ChatID,MsgID,"✧ العضـو ➻【 "..NameUser.." 】 \n✧ تـم بالتأكيد ترقيته ادمن  في المجموعه ➻ ") 
 end
 Resolv = Resolv:gsub([[\_]],"_")
 redis:hset(Pearlin..'username:'..UserID, 'username', Resolv)
 redis:sadd(Pearlin..'admins:'..ChatID,UserID) 
-return sendMsg(ChatID,MsgID,"📮¦ المستخدم  ⋙「 "..NameUser.." 」 \n📋¦ تم ترقيته ادمن  في المجموعه \n✓") 
+return sendMsg(ChatID,MsgID,"✧ العضـو ➻【 "..NameUser.." 】 \n✧ تـم ترقيته ادمن  في المجموعه ➻ ") 
 end
 if cmd == "demote" then
 if not redis:sismember(Pearlin..'admins:'..ChatID,UserID) then 
-return sendMsg(ChatID,MsgID,"📮¦ المستخدم  ⋙「 "..NameUser.." 」 \n📋¦ تم بالتأكيد تنزيله ادمن  في المجموعه \n✓") 
+return sendMsg(ChatID,MsgID,"✧ العضـو ➻【 "..NameUser.." 】 \n✧ تـم بالتأكيد تنزيله ادمن  في المجموعه ➻ ") 
 end
 redis:srem(Pearlin..'admins:'..ChatID,UserID)
-return sendMsg(ChatID,MsgID,"📮¦ المستخدم  ⋙「 "..NameUser.." 」 \n📋¦ تم تنزيله ادمن  في المجموعه \n✓") 
+return sendMsg(ChatID,MsgID,"✧ العضـو ➻【 "..NameUser.." 】 \n✧ تـم تنزيله ادمن  في المجموعه ➻ ") 
 end
 if cmd == "whois" then
 GetChatMember(ChatID,UserID,function(arg,data1)
@@ -1697,36 +1697,36 @@ end
 
 if cmd == "Upmonsh" then
 if redis:sismember(Pearlin..':MONSHA_Group:'..ChatID,UserID) then 
-return sendMsg(ChatID,MsgID,"📮¦ المستخدم  ⋙「 "..NameUser.." 」 \n📋¦ تم بالتأكيد ترقيته منشئ اساسي  في المجموعه \n✓") 
+return sendMsg(ChatID,MsgID,"✧ العضـو ➻【 "..NameUser.." 】 \n✧ تـم بالتأكيد ترقيته منشئ اساسي  في المجموعه ➻ ") 
 end
 redis:hset(Pearlin..'username:'..UserID,'username',USERNAME)
 redis:sadd(Pearlin..':MONSHA_Group:'..ChatID,UserID)
-return sendMsg(ChatID,MsgID,"📮¦ المستخدم  ⋙「 "..NameUser.." 」 \n📋¦ تم ترقيته منشئ اساسي  في المجموعه \n✓") 
+return sendMsg(ChatID,MsgID,"✧ العضـو ➻【 "..NameUser.." 】 \n✧ تـم ترقيته منشئ اساسي  في المجموعه ➻ ") 
 end
 
 if cmd == "Dwmonsh" then
 if not redis:sismember(Pearlin..':MONSHA_Group:'..ChatID,UserID) then 
-return sendMsg(ChatID,MsgID,"📮¦ المستخدم  ⋙「 "..NameUser.." 」 \n📋¦ تم بالتأكيد تنزيله منشئ اساسي  في المجموعه \n✓") 
+return sendMsg(ChatID,MsgID,"✧ العضـو ➻【 "..NameUser.." 】 \n✧ تـم بالتأكيد تنزيله منشئ اساسي  في المجموعه ➻ ") 
 end
 redis:srem(Pearlin..':MONSHA_Group:'..ChatID,UserID) 
-return sendMsg(ChatID,MsgID,"📮¦ المستخدم  ⋙「 "..NameUser.." 」 \n📋¦ تم تنزيله منشئ اساسي  في المجموعه \n✓") 
+return sendMsg(ChatID,MsgID,"✧ العضـو ➻【 "..NameUser.." 】 \n✧ تـم تنزيله منشئ اساسي  في المجموعه ➻ ") 
 end
 
 if cmd == "up_sudo" then
 if redis:sismember(Pearlin..':SUDO_BOT:',UserID) then 
-return sendMsg(ChatID,MsgID,"📮¦ المستخدم  ⋙「 "..NameUser.." 」 \n📋¦ تم بالتأكيد ترقيته مطور  في البوت \n✓") 
+return sendMsg(ChatID,MsgID,"✧ العضـو ➻【 "..NameUser.." 】 \n✧ تـم بالتأكيد ترقيته مطور  في البوت ➻ ") 
 end
 redis:hset(Pearlin..'username:'..UserID, 'username', USERNAME)
 redis:sadd(Pearlin..':SUDO_BOT:',UserID)
-return sendMsg(ChatID,MsgID,"📮¦ المستخدم  ⋙「 "..NameUser.." 」 \n📋¦ تم ترقيته مطور  في البوت \n✓") 
+return sendMsg(ChatID,MsgID,"✧ العضـو ➻【 "..NameUser.." 】 \n✧ تـم ترقيته مطور  في البوت ➻ ") 
 end
 
 if cmd == "dn_sudo" then
 if not redis:sismember(Pearlin..':SUDO_BOT:',UserID) then 
-return sendMsg(ChatID,MsgID,"📮¦ المستخدم  ⋙「 "..NameUser.." 」 \n📋¦ تم بالتأكيد تنزيله مطور  في البوت \n✓") 
+return sendMsg(ChatID,MsgID,"✧ العضـو ➻【 "..NameUser.." 】 \n✧ تـم بالتأكيد تنزيله مطور  في البوت ➻ ") 
 end
 redis:srem(Pearlin..':SUDO_BOT:',UserID) 
-return sendMsg(ChatID,MsgID,"📮¦ المستخدم  ⋙「 "..NameUser.." 」 \n📋¦ تم تنزيله مطور  في البوت \n✓") 
+return sendMsg(ChatID,MsgID,"✧ العضـو ➻【 "..NameUser.." 】 \n✧ تـم تنزيله مطور  في البوت ➻ ") 
 end
 
 if cmd == "ban" then
@@ -1748,12 +1748,12 @@ elseif  redis:sismember(Pearlin..'whitelist:'..ChatID,UserID) then
 return sendMsg(arg.ChatID,arg.MsgID,"👤*¦* لا يمكنك حظر المميز\n🛠") 
 end
 if Check_Banned(ChatID,UserID) then 
-return sendMsg(ChatID,MsgID,"📮¦ المستخدم  ⋙「 "..NameUser.." 」 \n⛔️¦ تم بالتأكيد حظره  من المجموعه \n✓") 
+return sendMsg(ChatID,MsgID,"✧ العضـو ➻【 "..NameUser.." 】 \n⛔️¦ تم بالتأكيد حظره  من المجموعه ➻ ") 
 end
 redis:hset(Pearlin..'username:'..UserID, 'username', Resolv)
 redis:sadd(Pearlin..'banned:'..ChatID,UserID)
 kick_user(UserID, ChatID)
-return sendMsg(ChatID,MsgID,"📮¦ المستخدم  ⋙「 "..NameUser.." 」 \n⛔️¦ تم حظره  من المجموعه \n✓") 
+return sendMsg(ChatID,MsgID,"✧ العضـو ➻【 "..NameUser.." 】 \n⛔️¦ تم حظره  من المجموعه ➻ ") 
 end
 
 if cmd == "kick" then
@@ -1781,15 +1781,15 @@ elseif data.ID == "Error" and data.code_ == 3 then
 return sendMsg(ChatID,MsgID,'📛*¦* لا يمكنني طرد العضو .\n🎟*¦* ليس لدي صلاحيه الحظر او لست مشرف\n ❕')    
 end
 StatusLeft(ChatID,UserID)
-return sendMsg(ChatID,MsgID,"📮¦ المستخدم  ⋙「 "..NameUser.." 」 \n⛔️¦ تم طرده  من المجموعه \n✓") 
+return sendMsg(ChatID,MsgID,"✧ العضـو ➻【 "..NameUser.." 】 \n⛔️¦ تم طرده  من المجموعه ➻ ") 
 end)
 end
 
 if cmd == "uban" then
 if not Check_Banned(ChatID,UserID) then 
-return sendMsg(ChatID,MsgID,"📮¦ المستخدم  ⋙「 "..NameUser.." 」 \n⛔️¦ تم بالتأكيد الغاء حظره  من المجموعه \n✓") 
+return sendMsg(ChatID,MsgID,"✧ العضـو ➻【 "..NameUser.." 】 \n⛔️¦ تم بالتأكيد الغاء حظره  من المجموعه ➻ ") 
 else
-return sendMsg(ChatID,MsgID,"📮¦ المستخدم  ⋙「 "..NameUser.." 」 \n⛔️¦ تم الغاء حظره  من المجموعه \n✓") 
+return sendMsg(ChatID,MsgID,"✧ العضـو ➻【 "..NameUser.." 】 \n⛔️¦ تم الغاء حظره  من المجموعه ➻ ") 
 end
 redis:hset(Pearlin..'username:'..UserID, 'username', Resolv)
 redis:srem(Pearlin..'banned:'..ChatID,UserID)
@@ -1819,27 +1819,27 @@ if redis:sismember(Pearlin..'admins:'..ChatID,UserID) then
 return sendMsg(ChatID,MsgID,"👤*¦* لا يمكنك كتم المدراء او الادمنيه\n🛠") 
 end
 if MuteUser(ChatID, UserID) then 
-return sendMsg(ChatID,MsgID,"📮¦ المستخدم  ⋙「 "..NameUser.." 」 \n⛔️¦ تم بالتأكيد كتمه  من المجموعه \n✓") 
+return sendMsg(ChatID,MsgID,"✧ العضـو ➻【 "..NameUser.." 】 \n⛔️¦ تم بالتأكيد كتمه  من المجموعه ➻ ") 
 end
 redis:hset(Pearlin..'username:'..UserID, 'username', Resolv)
 redis:sadd(Pearlin..'is_silent_users:'..ChatID,UserID)
-return sendMsg(ChatID,MsgID,"📮¦ المستخدم  ⋙「 "..NameUser.." 」 \n⛔️¦ تم كتمه  من المجموعه \n✓") 
+return sendMsg(ChatID,MsgID,"✧ العضـو ➻【 "..NameUser.." 】 \n⛔️¦ تم كتمه  من المجموعه ➻ ") 
 end
 
 if cmd == "unktm" then
 if not MuteUser(ChatID, UserID) then 
-return sendMsg(ChatID,MsgID,"📮¦ المستخدم  ⋙「 "..NameUser.." 」 \n⛔️¦ تم بالتأكيد الغاء كتمه  من المجموعه \n✓") 
+return sendMsg(ChatID,MsgID,"✧ العضـو ➻【 "..NameUser.." 】 \n⛔️¦ تم بالتأكيد الغاء كتمه  من المجموعه ➻ ") 
 end
 redis:hset(Pearlin..'username:'..UserID, 'username', Resolv)
 redis:srem(Pearlin..'is_silent_users:'..ChatID,UserID)
-return sendMsg(ChatID,MsgID,"📮¦ المستخدم  ⋙「 "..NameUser.." 」 \n⛔️¦ تم الغاء كتمه  من المجموعه \n✓") 
+return sendMsg(ChatID,MsgID,"✧ العضـو ➻【 "..NameUser.." 】 \n⛔️¦ تم الغاء كتمه  من المجموعه ➻ ") 
 end
 
 if cmd == "upMshrf" then
 redis:hset(Pearlin..'username:'..UserID,'username',Resolv)
 redis:setex(Pearlin..":uploadingsomeon:"..ChatID..msg.sender_user_id_,500,NameUser)
 redis:setex(Pearlin..":uploadingsomeon2:"..ChatID..msg.sender_user_id_,500,UserID)
-sendMsg(ChatID,MsgID,"📇|  » حسننا الان ارسل صلاحيات المشرف :\n\n|1- صلاحيه تغيير المعلومات\n|2- صلاحيه حذف الرسائل\n|3- صلاحيه دعوه مستخدمين\n|4- صلاحيه حظر وتقيد المستخدمين \n|5- صلاحيه تثبيت الرسائل \n|6- صلاحيه رفع مشرفين اخرين\n\n|[*]- لرفع كل الصلاحيات ما عدا رفع المشرفين \n|[**] - لرفع كل الصلاحيات مع رفع المشرفين \n\n🚸| يمكنك اختيار الارقام معا وتعيين الكنيه للمشرف في ان واحد مثلا : \n\n| 136 الزعيم\n📬") 
+sendMsg(ChatID,MsgID,"📇|  » حسننا الان ارسل صلاحيات المشرف :\n\n|1- صلاحيه تغيير المعلومات\n|2- صلاحيه حذف الرسائل\n|3- صلاحيه دعوه مستخدمين\n|4- صلاحيه حظر وتقيد المستخدمين \n|5- صلاحيه تثبيت الرسائل \n|6- صلاحيه رفع مشرفين اخرين\n\n|[*]- لرفع كل الصلاحيات ما عدا رفع المشرفين \n|[**] - لرفع كل الصلاحيات مع رفع المشرفين \n\n🚸| يمكنك اختيار الارقام معا وتعيين القـب للمشرف في ان واحد مثلا : \n\n| 136 برلـينَ\n📬") 
 return false
 end
 
@@ -1850,7 +1850,7 @@ redis:srem(Pearlin..':MONSHA_BOT:'..ChatID,UserID)
 redis:srem(Pearlin..'owners:'..ChatID,UserID)
 redis:srem(Pearlin..'admins:'..ChatID,UserID)
 redis:srem(Pearlin..'whitelist:'..ChatID,UserID)
-sendMsg(ChatID,MsgID,"📮¦ المستخدم  ⋙「 "..NameUser.." 」 \n📋¦ تم تنزيله من مشرفين المجموعه \n✓")
+sendMsg(ChatID,MsgID,"✧ العضـو ➻【 "..NameUser.." 】 \n✧ تـم تنزيله من مشرفين المجموعه ➻ ")
 return false
 end
 
@@ -1863,21 +1863,21 @@ elseif redis:sismember(Pearlin..':SUDO_BOT:',UserID) then
 return sendMsg(ChatID,MsgID,"👤*¦* لا يمكنك حظر المطور\n🛠") 
 end
 if GeneralBanned(UserID) then 
-return sendMsg(ChatID,MsgID,"📮¦ المستخدم  ⋙「 "..NameUser.." 」 \n⛔️¦ تم بالتأكيد حظره عام  من المجموعات \n✓") 
+return sendMsg(ChatID,MsgID,"✧ العضـو ➻【 "..NameUser.." 】 \n⛔️¦ تم بالتأكيد حظره عام  من المجموعات ➻ ") 
 end
 redis:hset(Pearlin..'username:'..UserID, 'username', Resolv)
 redis:sadd(Pearlin..'gban_users',UserID)
 kick_user(UserID,ChatID) 
-return sendMsg(ChatID,MsgID,"📮¦ المستخدم  ⋙「 "..NameUser.." 」 \n⛔️¦ تم حظره عام  من المجموعات \n✓") 
+return sendMsg(ChatID,MsgID,"✧ العضـو ➻【 "..NameUser.." 】 \n⛔️¦ تم حظره عام  من المجموعات ➻ ") 
 end
 
 if cmd == "unbandall" then  
 if not GeneralBanned(UserID) then
-return sendMsg(ChatID,MsgID,"📮¦ المستخدم  ⋙「 "..NameUser.." 」 \n⛔️¦ تم بالتأكيد الغاء حظره العام  من المجموعات \n✓") 
+return sendMsg(ChatID,MsgID,"✧ العضـو ➻【 "..NameUser.." 】 \n⛔️¦ تم بالتأكيد الغاء حظره العام  من المجموعات ➻ ") 
 end
 redis:srem(Pearlin..'gban_users',UserID)
 StatusLeft(ChatID,UserID)
-return sendMsg(ChatID,MsgID,"📮¦ المستخدم  ⋙「 "..NameUser.." 」 \n⛔️¦ تم الغاء حظره العام  من المجموعات \n✓") 
+return sendMsg(ChatID,MsgID,"✧ العضـو ➻【 "..NameUser.." 】 \n⛔️¦ تم الغاء حظره العام  من المجموعات ➻ ") 
 end
 
 if cmd == "tfa3l" then  
@@ -1894,7 +1894,7 @@ Restrict(ChatID,UserID,2)
 redis:srem(Pearlin..'banned:'..ChatID,UserID)
 StatusLeft(ChatID,UserID)
 redis:srem(Pearlin..'is_silent_users:'..ChatID,UserID)
-return sendMsg(ChatID,MsgID,"📮¦ المستخدم  ⋙「 "..NameUser.." 」 \n  تم رفع القيود ان وجد\n✓") 
+return sendMsg(ChatID,MsgID,"✧ العضـو ➻【 "..NameUser.." 】 \n  تم رفع القيود ان وجد➻ ") 
 end
 
 --========================================================================
@@ -1942,7 +1942,7 @@ end
 function senddwon()  sendMsg(ChatID,MsgID,"📛*¦* عذرا المستخدم رتبته اعلى منك لا يمكن تنزيله \n❕") end
 function sendpluse() sendMsg(ChatID,MsgID,"📛*¦* عذرا لا يمكن تنزيل رتبه مثل رتبتك : "..msg.TheRankCmd.." \n❕") end
 
-if rinkuser == 8 then return sendMsg(ChatID,MsgID,"📮¦ المستخدم  ⋙「 "..NameUser.." 」   \nانه بالتأكيد عضو \n✓️")  end
+if rinkuser == 8 then return sendMsg(ChatID,MsgID,"✧ العضـو ➻【 "..NameUser.." 】   \nانه بالتأكيد عضو ➻ ️")  end
 huk = false
 if msg.SudoBase then 
 redis:srem(Pearlin..':SUDO_BOT:',UserID)
@@ -1986,7 +1986,7 @@ else
 huk = true
 end
 
-if not huk then sendMsg(ChatID,UserID,"📮¦ المستخدم  ⋙「 "..NameUser.." 」 \n"..DonisDown.."\n✓️") end
+if not huk then sendMsg(ChatID,UserID,"✧ العضـو ➻【 "..NameUser.." 】 \n"..DonisDown.."➻ ️") end
 
 end
 
