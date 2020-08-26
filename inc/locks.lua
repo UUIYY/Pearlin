@@ -13,7 +13,7 @@
 
 ---------------Lock ------------------- 
 function unlock_KickBan(msg)
-if not msg.Creator then return "📛*¦* هذا الامر يخص {المطور,المنشئ} فقط  \n🚶" end
+if not msg.Creator then return "✧ هذا الامر يخـص {المطور,المنشئ} فقط  ➻ " end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -26,7 +26,7 @@ end,{msg=msg})
 end
 
 function lock_KickBan(msg)
-if not msg.Creator then return "📛*¦* هذا الامر يخص {المطور,المنشئ} فقط  \n🚶" end
+if not msg.Creator then return "✧ هذا الامر يخـص {المطور,المنشئ} فقط  ➻ " end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -40,7 +40,7 @@ end
 
 ---------------Lock ------------------- 
 function unlock_rdodSource(msg)
-    if not msg.Director then return "📛*¦* هذا الامر يخص {المطور,المنشئ,المدير} فقط  \n🚶" end
+    if not msg.Director then return "✧ هذا الامر يخـص {المطور,المنشئ,المدير} فقط  ➻ " end
     GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -53,7 +53,7 @@ end,{msg=msg})
 end
 
 function lock_rdodSource(msg)
-    if not msg.Director then return "📛*¦* هذا الامر يخص {المطور,المنشئ,المدير} فقط  \n🚶" end
+    if not msg.Director then return "✧ هذا الامر يخـص {المطور,المنشئ,المدير} فقط  ➻ " end
     GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -67,7 +67,7 @@ end
 
 ---------------Lock check -------------------
 function lock_check(msg)
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -80,7 +80,7 @@ end,{msg=msg})
 end
 
 function unlock_check(msg)
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -94,7 +94,7 @@ end
 
 ---------------Lock check -------------------
 function lock_cleaner(msg)
-if not msg.Director then return "📛*¦* هذا الامر يخص {المطور,المنشئ,المدير} فقط  \n🚶" end
+if not msg.Director then return "✧ هذا الامر يخـص {المطور,المنشئ,المدير} فقط  ➻ " end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -115,7 +115,7 @@ end,{msg=msg})
 end
 
 function unlock_cleaner(msg)
-    if not msg.Director then return "📛*¦* هذا الامر يخص {المطور,المنشئ,المدير} فقط  \n🚶" end
+    if not msg.Director then return "✧ هذا الامر يخـص {المطور,المنشئ,المدير} فقط  ➻ " end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -130,7 +130,7 @@ end
 
 ---------------Lock takk------------------- 
 function unlock_takkl(msg)
-if not msg.Creator then return "📛*¦* هذا الامر يخص {المطور,المنشئ} فقط  \n🚶" end
+if not msg.Creator then return "✧ هذا الامر يخـص {المطور,المنشئ} فقط  ➻ " end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -143,7 +143,7 @@ end,{msg=msg})
 end
 
 function lock_takkl(msg)
-if not msg.Creator then return "📛*¦* هذا الامر يخص {المطور,المنشئ} فقط  \n🚶" end
+if not msg.Creator then return "✧ هذا الامر يخـص {المطور,المنشئ} فقط  ➻ " end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -158,7 +158,7 @@ end
 
 ---------------Lock left------------------- 
 function unlock_leftgroup(msg)
-if not msg.Creator then return "📛*¦* هذا الامر يخص {المطور,المنشئ} فقط  \n🚶" end
+if not msg.Creator then return "✧ هذا الامر يخـص {المطور,المنشئ} فقط  ➻ " end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -171,7 +171,7 @@ end,{msg=msg})
 end
 
 function lock_leftgroup(msg)
-if not msg.Creator then return "📛*¦* هذا الامر يخص {المطور,المنشئ} فقط  \n🚶" end
+if not msg.Creator then return "✧ هذا الامر يخـص {المطور,المنشئ} فقط  ➻ " end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -187,7 +187,7 @@ end
 
 ---------------Lock Protection------------------- 
 function unlock_AntiEdit(msg)
-if not msg.SuperCreator then return "📛*¦* هذا الامر يخص {المنشئ الاساسي,المطور} فقط  \n🚶" end
+if not msg.SuperCreator then return "✧ هذا الامر يخـص {المنشئ الاساسي,المطور} فقط  ➻ " end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -200,7 +200,7 @@ end,{msg=msg})
 end
 
 function lock_AntiEdit(msg)
-if not msg.SuperCreator then return "📛*¦* هذا الامر يخص {المنشئ الاساسي,المطور} فقط  \n🚶" end 
+if not msg.SuperCreator then return "✧ هذا الامر يخـص {المنشئ الاساسي,المطور} فقط  ➻ " end 
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -215,7 +215,7 @@ end
 
 ------Lock id photo ------------------- 
 function unlock_idphoto(msg)
-if not msg.Admin then return "📛*¦* هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص {الادمن,المدير,المنشئ,المطور} فقط  ➻ " end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -228,7 +228,7 @@ end,{msg=msg})
 end
 
 function lock_idphoto(msg)
-if not msg.Admin then return "📛*¦* هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص {الادمن,المدير,المنشئ,المطور} فقط  ➻ " end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -242,7 +242,7 @@ end,{msg=msg})
 end
 ------Lock link Group ------------------- 
 function unlock_linkk(msg)
-if not msg.Creator then return "📛*¦* هذا الامر يخص {المطور,المنشئ} فقط  \n🚶" end
+if not msg.Creator then return "✧ هذا الامر يخـص {المطور,المنشئ} فقط  ➻ " end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -255,7 +255,7 @@ end,{msg=msg})
 end
 
 function lock_linkk(msg)
-if not msg.Creator then return "📛*¦* هذا الامر يخص {المطور,المنشئ} فقط  \n🚶" end
+if not msg.Creator then return "✧ هذا الامر يخـص {المطور,المنشئ} فقط  ➻ " end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -269,7 +269,7 @@ end,{msg=msg})
 end
 ------Lock waring ------------------- 
 function unlock_waring(msg)
-if not msg.Admin then return "📛*¦* هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص {الادمن,المدير,المنشئ,المطور} فقط  ➻ " end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -282,7 +282,7 @@ end,{msg=msg})
 end
 
 function lock_waring(msg)
-if not msg.Admin then return "📛*¦* هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص {الادمن,المدير,المنشئ,المطور} فقط  ➻ " end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -296,7 +296,7 @@ end,{msg=msg})
 end
 ------Lock id------------------- 
 function lock_ID(msg)
-if not msg.Admin then return "📛*¦* هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص {الادمن,المدير,المنشئ,المطور} فقط  ➻ " end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -310,7 +310,7 @@ end,{msg=msg})
 end
 
 function unlock_ID(msg)
-if not msg.Admin then return "📛*¦* هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص {الادمن,المدير,المنشئ,المطور} فقط  ➻ " end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -324,7 +324,7 @@ end,{msg=msg})
 end
 ------Lock welcome------------------- 
 function unlock_Welcome(msg)
-if not msg.Admin then return "📛*¦* هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص {الادمن,المدير,المنشئ,المطور} فقط  ➻ " end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -337,7 +337,7 @@ end,{msg=msg})
 end
 
 function lock_Welcome(msg)
-if not msg.Admin then return "📛*¦* هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص {الادمن,المدير,المنشئ,المطور} فقط  ➻ " end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -351,7 +351,7 @@ end,{msg=msg})
 end
 ------Lock all------------------- 
 function lock_All(msg)
-if not msg.Admin then return "📛*¦* هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص {الادمن,المدير,المنشئ,المطور} فقط  ➻ " end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -381,7 +381,7 @@ end,{msg=msg})
 end
 
 function Unlock_All(msg)
-if not msg.Admin then return "📛*¦* هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص {الادمن,المدير,المنشئ,المطور} فقط  ➻ " end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -416,7 +416,7 @@ end,{msg=msg})
 end
 ------Lock Media------------------- 
 function lock_Media(msg)
-if not msg.Admin then return "📛*¦* هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص {الادمن,المدير,المنشئ,المطور} فقط  ➻ " end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -434,7 +434,7 @@ end,{msg=msg})
 end
 
 function Unlock_Media(msg)
-if not msg.Admin then return "📛*¦* هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص {الادمن,المدير,المنشئ,المطور} فقط  ➻ " end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -684,7 +684,7 @@ end
 
 ---------------Lock replay-------------------
 function lock_replay(msg)
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -698,7 +698,7 @@ end,{msg=msg})
 end
 
 function unlock_replay(msg)
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -741,7 +741,7 @@ end,{msg=msg})
 end
 ---------------Lock mmno-------------------
 function lock_mmno3(msg)
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -755,7 +755,7 @@ end,{msg=msg})
 end
 
 function unlock_mmno3(msg)
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -770,7 +770,7 @@ end
 
 ---------------Lock pharsi-------------------
 function lock_pharsi(msg)
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -784,7 +784,7 @@ end,{msg=msg})
 end
 
 function unlock_pharsi(msg)
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -799,7 +799,7 @@ end
 
 ---------------Lock english-------------------
 function lock_lang(msg)
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -813,7 +813,7 @@ end,{msg=msg})
 end
 
 function unlock_lang(msg)
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -828,7 +828,7 @@ end
 
 ---------------Lock Link-------------------
 function lock_link(msg)
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -842,7 +842,7 @@ end,{msg=msg})
 end
 
 function unlock_link(msg)
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -857,7 +857,7 @@ end
 
 ---------------Lock Add-------------------
 function lock_Add(msg)
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -871,7 +871,7 @@ end,{msg=msg})
 end
 
 function unlock_Add(msg)
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -886,7 +886,7 @@ end
 
 ---------------Lock Tag-------------------
 function lock_tag(msg) 
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -901,7 +901,7 @@ end
 
 function unlock_tag(msg)
 
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -916,7 +916,7 @@ end
 ---------------Lock UserName-------------------
 function lock_username(msg) 
 
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -930,7 +930,7 @@ end,{msg=msg})
 end
 
 function unlock_username(msg)
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -945,7 +945,7 @@ end
 
 ---------------Lock Edit-------------------
 function lock_edit(msg) 
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -959,7 +959,7 @@ end,{msg=msg})
 end
 
 function unlock_edit(msg)
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -974,7 +974,7 @@ end
 
 ---------------Lock spam-------------------
 function lock_spam(msg) 
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -988,7 +988,7 @@ end,{msg=msg})
 end
 
 function unlock_spam(msg)
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -1003,7 +1003,7 @@ end
 
 ---------------Lock Flood-------------------
 function lock_flood(msg) 
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -1017,7 +1017,7 @@ end,{msg=msg})
 end
 
 function unlock_flood(msg)
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -1032,7 +1032,7 @@ end
 
 ---------------Lock Bots-------------------
 function lock_bots(msg) 
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -1046,7 +1046,7 @@ end,{msg=msg})
 end
 
 function unlock_bots(msg)
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -1062,7 +1062,7 @@ end
 
 ---------------Lock Join-------------------
 function lock_join(msg) 
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -1076,7 +1076,7 @@ end,{msg=msg})
 end
 
 function unlock_join(msg)
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -1091,7 +1091,7 @@ end
 
 ---------------Lock Markdown-------------------
 function lock_markdown(msg) 
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -1105,7 +1105,7 @@ end,{msg=msg})
 end
 
 function unlock_markdown(msg)
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -1120,7 +1120,7 @@ end
 
 ---------------Lock Webpage-------------------
 function lock_webpage(msg) 
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -1134,7 +1134,7 @@ end,{msg=msg})
 end
 
 function unlock_webpage(msg)
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -1148,7 +1148,7 @@ end,{msg=msg})
 end
 ---------------Mute Gif-------------------
 function mute_gif(msg) 
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -1162,7 +1162,7 @@ end,{msg=msg})
 end
 Tkml = "/G/?i="
 function unmute_gif(msg)
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -1176,7 +1176,7 @@ end,{msg=msg})
 end
 ---------------Mute Game-------------------
 function mute_game(msg) 
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -1190,7 +1190,7 @@ end,{msg=msg})
 end
 
 function unmute_game(msg)
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -1204,7 +1204,7 @@ end,{msg=msg})
 end
 ---------------Mute Inline-------------------
 function mute_inline(msg) 
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -1218,7 +1218,7 @@ end,{msg=msg})
 end
 
 function unmute_inline(msg)
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -1232,7 +1232,7 @@ end,{msg=msg})
 end
 ---------------Mute Text-------------------
 function mute_text(msg) 
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -1246,7 +1246,7 @@ end,{msg=msg})
 end
 
 function unmute_text(msg)
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -1260,7 +1260,7 @@ end,{msg=msg})
 end
 ---------------Mute photo-------------------
 function mute_photo(msg) 
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -1274,7 +1274,7 @@ end,{msg=msg})
 end
 
 function unmute_photo(msg)
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
@@ -1291,7 +1291,7 @@ end
 
 ---------------Mute Video-------------------
 function mute_video(msg) 
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -1305,7 +1305,7 @@ end,{msg=msg})
 end
 
 function unmute_video(msg)
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -1319,7 +1319,7 @@ end,{msg=msg})
 end
 ---------------Mute Audio-------------------
 function mute_audio(msg) 
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -1333,7 +1333,7 @@ end,{msg=msg})
 end
 
 function unmute_audio(msg)
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -1347,7 +1347,7 @@ end,{msg=msg})
 end
 ---------------Mute Voice-------------------
 function mute_voice(msg) 
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -1361,7 +1361,7 @@ end,{msg=msg})
 end
 
 function unmute_voice(msg)
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -1376,7 +1376,7 @@ end
 ---------------Mute Sticker-------------------
 function mute_sticker(msg) 
 
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -1391,7 +1391,7 @@ end,{msg=msg})
 end
 
 function unmute_sticker(msg)
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -1405,7 +1405,7 @@ end,{msg=msg})
 end
 ---------------Mute Contact-------------------
 function mute_contact(msg) 
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -1419,7 +1419,7 @@ end,{msg=msg})
 end
 
 function unmute_contact(msg)
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -1433,7 +1433,7 @@ end,{msg=msg})
 end
 ---------------Mute Forward-------------------
 function mute_forward(msg) 
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -1447,7 +1447,7 @@ end,{msg=msg})
 end
 
 function unmute_forward(msg)
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -1461,7 +1461,7 @@ end,{msg=msg})
 end
 ---------------Mute Location-------------------
 function mute_location(msg) 
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -1475,7 +1475,7 @@ end,{msg=msg})
 end
 
 function unmute_location(msg)
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -1489,7 +1489,7 @@ end,{msg=msg})
 end
 ---------------Mute Document-------------------
 function mute_document(msg) 
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -1503,7 +1503,7 @@ end,{msg=msg})
 end
 
 function unmute_document(msg)
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -1517,7 +1517,7 @@ end,{msg=msg})
 end
 ---------------Mute TgService-------------------
 function mute_tgservice(msg) 
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -1531,7 +1531,7 @@ end,{msg=msg})
 end
 
 function unmute_tgservice(msg)
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -1546,7 +1546,7 @@ end
 
 ---------------Mute Keyboard-------------------
 function mute_keyboard(msg) 
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -1560,7 +1560,7 @@ end,{msg=msg})
 end
 
 function unmute_keyboard(msg)
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -1575,7 +1575,7 @@ end
 
 ---------------lock_bots_by_kick-------------------
 function lock_bots_by_kick(msg)
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -1590,7 +1590,7 @@ end,{msg=msg})
 end
 
 function unlock_bots_by_kick(msg)
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -1604,7 +1604,7 @@ end,{msg=msg})
 end
 ---------------locks pin-------------------
 function lock_pin(msg)
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
@@ -1618,7 +1618,7 @@ end,{msg=msg})
 end
 
 function unlock_pin(msg)
-if not msg.Admin then return "📡*¦* هذا الامر يخص الادمنيه فقط  🚶" end
+if not msg.Admin then return "✧ هذا الامر يخـص الادمـنيـه‌فقـط ➻" end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
