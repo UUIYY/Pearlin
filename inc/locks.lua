@@ -18,9 +18,9 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if redis:get(Pearlin.."lock_KickBan"..msg.chat_id_) then 
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد تفعيل الحظر والطرد    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد تفعيل الحظر والطرد    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else redis:set(Pearlin.."lock_KickBan"..msg.chat_id_,true)
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم تفعيل الحظر والطرد بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم تفعيل الحظر والطرد بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end 
 end,{msg=msg})
 end
@@ -31,9 +31,9 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if not redis:get(Pearlin.."lock_KickBan"..msg.chat_id_) then 
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم بالتأكيد تعطيل الحظر والطرد    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم بالتأكيد تعطيل الحظر والطرد    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else redis:del(Pearlin.."lock_KickBan"..msg.chat_id_) 
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم تعطيل الحظر والطرد بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم تعطيل الحظر والطرد بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end 
@@ -45,9 +45,9 @@ function unlock_rdodSource(msg)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if redis:get(Pearlin.."lock_rdodSource"..msg.chat_id_) then 
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد تفعيل ردود السورس    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد تفعيل ردود السورس    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else redis:set(Pearlin.."lock_rdodSource"..msg.chat_id_,true)
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم تفعيل ردود السورس بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم تفعيل ردود السورس بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end 
 end,{msg=msg})
 end
@@ -58,9 +58,9 @@ function lock_rdodSource(msg)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if not redis:get(Pearlin.."lock_rdodSource"..msg.chat_id_) then 
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم بالتأكيد تعطيل  ردود السورس    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم بالتأكيد تعطيل  ردود السورس    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else redis:del(Pearlin.."lock_rdodSource"..msg.chat_id_) 
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم تعطيل ردود السورس بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم تعطيل ردود السورس بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end 
@@ -72,9 +72,9 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if not redis:get(Pearlin.."lock_check"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد تعطيل التحقق    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" )        else 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد تعطيل التحقق    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " )        else 
 redis:del(Pearlin.."lock_check"..msg.chat_id_)
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم تعطيل التحقق بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم تعطيل التحقق بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -85,9 +85,9 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if redis:get(Pearlin.."lock_check"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم بالتأكيد تفعيل التحقق    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" )        else
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم بالتأكيد تفعيل التحقق    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " )        else
 redis:set(Pearlin.."lock_check"..msg.chat_id_,true)
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم تفعيل التحقق بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" )
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم تفعيل التحقق بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " )
 end
 end,{msg=msg})
 end
@@ -99,7 +99,7 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if not redis:get(Pearlin.."lock_cleaner"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد تعطيل التنظيف التلقائي    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" )
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد تعطيل التنظيف التلقائي    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " )
 else 
                 
 redis:del(Pearlin.."lock_cleaner"..msg.chat_id_)
@@ -109,7 +109,7 @@ redis:del(Pearlin..":SetTimerCleaner:"..msg.chat_id_..v)
 Del_msg(msg.chat_id_,v)
 end
 redis:del(Pearlin..":IdsMsgsCleaner:"..msg.chat_id_)
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم تعطيل التنظيف التلقائي بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم تعطيل التنظيف التلقائي بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -120,9 +120,9 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if redis:get(Pearlin.."lock_cleaner"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم بالتأكيد تفعيل التنظيف التلقائي    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" )        else
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم بالتأكيد تفعيل التنظيف التلقائي    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " )        else
 redis:set(Pearlin.."lock_cleaner"..msg.chat_id_,true)
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم تفعيل التنظيف التلقائي بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" )
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم تفعيل التنظيف التلقائي بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " )
 end
 end,{msg=msg})
 end
@@ -135,9 +135,9 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if redis:get(Pearlin.."lock_takkl"..msg.chat_id_) then 
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد تفعيل تاك للكل    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد تفعيل تاك للكل    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else redis:set(Pearlin.."lock_takkl"..msg.chat_id_,true)
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم تفعيل الحظر تاك للكل   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم تفعيل الحظر تاك للكل   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -148,10 +148,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if not redis:get(Pearlin.."lock_takkl"..msg.chat_id_) then 
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم بالتأكيد تعطيل تاك للكل    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم بالتأكيد تعطيل تاك للكل    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else
 redis:del(Pearlin.."lock_takkl"..msg.chat_id_) 
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم تعطيل تاك للكل بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم تعطيل تاك للكل بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end 
 end,{msg=msg})
 end 
@@ -163,9 +163,9 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if redis:get(Pearlin.."lock_leftgroup"..msg.chat_id_) then 
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد تفعيل المغادره    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد تفعيل المغادره    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else redis:set(Pearlin.."lock_leftgroup"..msg.chat_id_,true)
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم تفعيل المغادره بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم تفعيل المغادره بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -176,10 +176,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if not redis:get(Pearlin.."lock_leftgroup"..msg.chat_id_) then 
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم بالتأكيد تعطيل المغادره    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" )
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم بالتأكيد تعطيل المغادره    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " )
 else
 redis:del(Pearlin.."lock_leftgroup"..msg.chat_id_) 
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم تعطيل المغادره بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" )
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم تعطيل المغادره بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " )
 end 
 end,{msg=msg})
 end 
@@ -192,9 +192,9 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if redis:get(Pearlin.."antiedit"..msg.chat_id_) then 
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم بالتأكيد تفعيل الحمايه    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم بالتأكيد تفعيل الحمايه    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else redis:set(Pearlin.."antiedit"..msg.chat_id_,true)
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم تفعيل الحمايه بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم تفعيل الحمايه بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -205,10 +205,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if not redis:get(Pearlin.."antiedit"..msg.chat_id_) then 
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد تعطيل الحمايه    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد تعطيل الحمايه    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else
 redis:del(Pearlin.."antiedit"..msg.chat_id_) 
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم تعطيل الحمايه بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم تعطيل الحمايه بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end 
 end,{msg=msg})
 end 
@@ -220,9 +220,9 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if redis:get(Pearlin.."idphoto"..msg.chat_id_) then 
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد تفعيل الايدي بالصوره    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد تفعيل الايدي بالصوره    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else redis:set(Pearlin.."idphoto"..msg.chat_id_,true)
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم تفعيل الايدي بالصوره بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم تفعيل الايدي بالصوره بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -233,10 +233,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if not redis:get(Pearlin.."idphoto"..msg.chat_id_) then 
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم بالتأكيد تعطيل الايدي بالصوره    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم بالتأكيد تعطيل الايدي بالصوره    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else
 redis:del(Pearlin.."idphoto"..msg.chat_id_) 
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم تعطيل الايدي بالصوره بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم تعطيل الايدي بالصوره بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end 
 end,{msg=msg})
 end
@@ -247,9 +247,9 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if redis:get(Pearlin.."lock_linkk"..msg.chat_id_) then 
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد تفعيل الرابط    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد تفعيل الرابط    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else redis:set(Pearlin.."lock_linkk"..msg.chat_id_,true)
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم تفعيل الرابط بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم تفعيل الرابط بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -260,10 +260,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if not redis:get(Pearlin.."lock_linkk"..msg.chat_id_) then 
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم بالتأكيد تعطيل الرابط    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم بالتأكيد تعطيل الرابط    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else
 redis:del(Pearlin.."lock_linkk"..msg.chat_id_) 
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم تعطيل الرابط بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم تعطيل الرابط بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end 
 end,{msg=msg})
 end
@@ -274,9 +274,9 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if redis:get(Pearlin.."lock_woring"..msg.chat_id_) then 
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم بالتأكيد تفعيل التحذير    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم بالتأكيد تفعيل التحذير    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else redis:set(Pearlin.."lock_woring"..msg.chat_id_,true)
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم تفعيل التحذير بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم تفعيل التحذير بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -287,10 +287,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if not redis:get(Pearlin.."lock_woring"..msg.chat_id_) then 
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد تعطيل التحذير    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد تعطيل التحذير    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else
 redis:del(Pearlin.."lock_woring"..msg.chat_id_) 
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم تعطيل التحذير بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم تعطيل التحذير بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end 
 end,{msg=msg})
 end
@@ -301,10 +301,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if not redis:get(Pearlin.."lock_id"..msg.chat_id_) then 
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم بالتأكيد تعطيل الايدي    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم بالتأكيد تعطيل الايدي    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else
 redis:del(Pearlin.."lock_id"..msg.chat_id_) 
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم تعطيل الايدي بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم تعطيل الايدي بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end 
 end,{msg=msg})
 end
@@ -315,10 +315,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if redis:get(Pearlin.."lock_id"..msg.chat_id_) then 
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد تفعيل الايدي    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد تفعيل الايدي    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else 
 redis:set(Pearlin.."lock_id"..msg.chat_id_,true)  
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم تفعيل الايدي بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم تفعيل الايدي بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end 
 end,{msg=msg})
 end
@@ -329,9 +329,9 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if redis:get(Pearlin.."welcome:get"..msg.chat_id_) then 
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد تفعيل الترحيب    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد تفعيل الترحيب    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else redis:set(Pearlin.."welcome:get"..msg.chat_id_,true)  
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم تفعيل الترحيب بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم تفعيل الترحيب بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end 
 end,{msg=msg})
 end
@@ -342,10 +342,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if not redis:get(Pearlin.."welcome:get"..msg.chat_id_) then 
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم بالتأكيد تعطيل الترحيب    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم بالتأكيد تعطيل الترحيب    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else
 redis:del(Pearlin.."welcome:get"..msg.chat_id_) 
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم تعطيل الترحيب بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم تعطيل الترحيب بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end 
 end,{msg=msg})
 end
@@ -375,7 +375,7 @@ Pearlin.."lock_webpage"..msg.chat_id_,true,
 Pearlin.."mute_video"..msg.chat_id_,true,
 Pearlin.."mute_inline"..msg.chat_id_,true
 )
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم قفل الكل بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم قفل الكل بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end,{msg=msg})
 
 end
@@ -410,7 +410,7 @@ Pearlin..":tqeed_fwd:"..msg.chat_id_,
 Pearlin..":tqeed_link:"..msg.chat_id_,
 Pearlin.."mute_inline"..msg.chat_id_
 )
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح الكل بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح الكل بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end,{msg=msg})
 
 end
@@ -428,7 +428,7 @@ Pearlin.."mute_voice"..msg.chat_id_,true,
 Pearlin.."mute_sticker"..msg.chat_id_,true,
 Pearlin.."mute_video"..msg.chat_id_,true
 )
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم قفل الوسائط بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم قفل الوسائط بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end,{msg=msg})
 
 end
@@ -446,7 +446,7 @@ Pearlin.."mute_voice"..msg.chat_id_,
 Pearlin.."mute_sticker"..msg.chat_id_,
 Pearlin.."mute_video"..msg.chat_id_
 )
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح الوسائط بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح الوسائط بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end,{msg=msg})
 
 end
@@ -458,11 +458,11 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if redis:get(Pearlin..":tqeed_video:"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم بالتأكيد قفل الفيديو بالتقييد    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" )
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم بالتأكيد قفل الفيديو بالتقييد    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " )
 else
 redis:del(Pearlin..":tqeed_video:"..msg.chat_id_)
 redis:set(Pearlin..":tqeed_video:"..msg.chat_id_,true)
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم قفل الفيديو بالتقييد بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" )    end
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم قفل الفيديو بالتقييد بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " )    end
 end,{msg=msg})
 end
 
@@ -472,10 +472,10 @@ msg = arg.msg
 local NameUser   = Hyper_Link_Name(data)
 if not msg.Admin then return "🚸*¦ * هذا الامر يخص الادمنيه فقط  \n📛" end
 if not redis:get(Pearlin..":tqeed_video:"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح الفيديو بالتقييد    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" )
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح الفيديو بالتقييد    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " )
 else 
 redis:del(Pearlin..":tqeed_video:"..msg.chat_id_)
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح الفيديو بالتقييد بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" )
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح الفيديو بالتقييد بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " )
 end
 end,{msg=msg})
 end
@@ -487,11 +487,11 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if redis:get(Pearlin..":tqeed_gif:"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم بالتأكيد قفل المتحركه بالتقييد    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" )
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم بالتأكيد قفل المتحركه بالتقييد    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " )
 else
 redis:del(Pearlin.."mute_gif"..msg.chat_id_)
 redis:set(Pearlin..":tqeed_gif:"..msg.chat_id_,true)
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم قفل المتحركه بالتقييد بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" )
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم قفل المتحركه بالتقييد بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " )
 end
 end,{msg=msg})
 end
@@ -502,10 +502,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if not redis:get(Pearlin..":tqeed_gif:"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح المتحركه بالتقييد    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" )
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح المتحركه بالتقييد    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " )
 else 
 redis:del(Pearlin..":tqeed_gif:"..msg.chat_id_)
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح المتحركه بالتقييد بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" )    end
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح المتحركه بالتقييد بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " )    end
 end,{msg=msg})
 end
 
@@ -516,11 +516,11 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if redis:get(Pearlin..":tqeed_fwd:"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم بالتأكيد قفل التوجيه بالتقييد    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" )
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم بالتأكيد قفل التوجيه بالتقييد    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " )
 else
 redis:del(Pearlin.."mute_forward"..msg.chat_id_)
 redis:set(Pearlin..":tqeed_fwd:"..msg.chat_id_,true)
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم قفل التوجيه بالتقييد بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" )
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم قفل التوجيه بالتقييد بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " )
 end
 end,{msg=msg})
 end
@@ -531,10 +531,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if not redis:get(Pearlin..":tqeed_fwd:"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح التوجيه  بالتقييد    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" )
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح التوجيه  بالتقييد    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " )
 else 
 redis:del(Pearlin..":tqeed_fwd:"..msg.chat_id_)
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح التوجيه بالتقييد بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" )
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح التوجيه بالتقييد بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " )
 end
 end,{msg=msg})
 end
@@ -546,10 +546,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if redis:get(Pearlin..":tqeed_link:"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم بالتأكيد قفل الروابط بالتقييد    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" )
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم بالتأكيد قفل الروابط بالتقييد    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " )
 else
 redis:set(Pearlin..":tqeed_link:"..msg.chat_id_,true)
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم قفل الروابط بالتقييد بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" )
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم قفل الروابط بالتقييد بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " )
 end
 end,{msg=msg})
 end
@@ -560,10 +560,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if not redis:get(Pearlin..":tqeed_link:"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح الروابط بالتقييد    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" )
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح الروابط بالتقييد    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " )
 else 
 redis:del(Pearlin..":tqeed_link:"..msg.chat_id_)
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح الروابط بالتقييد بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" )
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح الروابط بالتقييد بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " )
 end
 end,{msg=msg})
 end
@@ -575,10 +575,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if redis:get(Pearlin..":tqeed_photo:"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم بالتأكيد قفل الصور بالتقييد    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" )
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم بالتأكيد قفل الصور بالتقييد    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " )
 else
 redis:set(Pearlin..":tqeed_photo:"..msg.chat_id_,true)
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم قفل الصور بالتقييد بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" )
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم قفل الصور بالتقييد بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " )
 end
 end,{msg=msg})
 end
@@ -589,10 +589,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if not redis:get(Pearlin..":tqeed_photo:"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح الصور بالتقييد    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" )
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح الصور بالتقييد    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " )
 else 
 redis:del(Pearlin..":tqeed_photo:"..msg.chat_id_)
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح الصور بالتقييد بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" )
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح الصور بالتقييد بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " )
 end
 end,{msg=msg})
 end
@@ -603,10 +603,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if redis:get(Pearlin.."lock_twasel") then
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم بالتأكيد تعطيل التواصل    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" )
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم بالتأكيد تعطيل التواصل    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " )
 else
 redis:set(Pearlin.."lock_twasel",true)
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم تعطيل التواصل بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" )    end
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم تعطيل التواصل بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " )    end
 end,{msg=msg})
 end
 
@@ -616,10 +616,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if not redis:get(Pearlin.."lock_twasel") then
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد تفعيل التواصل    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" )
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد تفعيل التواصل    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " )
 else 
 redis:del(Pearlin.."lock_twasel")
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم تفعيل التواصل بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" )
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم تفعيل التواصل بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " )
 end
 end,{msg=msg})
 end
@@ -632,9 +632,9 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if redis:get(Pearlin.."lockidedit") then 
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد تفعيل تعيين الايدي للمطور    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" )
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد تفعيل تعيين الايدي للمطور    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " )
 else redis:set(Pearlin.."lockidedit",true)
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم تفعيل تعيين الايدي للمطور  بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" )
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم تفعيل تعيين الايدي للمطور  بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " )
 end
 end,{msg=msg})
 end
@@ -645,10 +645,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if not redis:get(Pearlin.."lockidedit") then 
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم بالتأكيد تعطيل تعيين الايدي للمطور    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" )
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم بالتأكيد تعطيل تعيين الايدي للمطور    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " )
 else
 redis:del(Pearlin.."lockidedit") 
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم تعطيل تعيين الايدي للمطور  بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" )
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم تعطيل تعيين الايدي للمطور  بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " )
 end 
 end,{msg=msg})
 end 
@@ -661,10 +661,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if not redis:get(Pearlin.."lock_brod") then
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم بالتأكيد تعطيل اذاعه المطورين    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" )
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم بالتأكيد تعطيل اذاعه المطورين    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " )
 else
 redis:del(Pearlin.."lock_brod")
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم تعطيل اذاعه المطورين بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" )
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم تعطيل اذاعه المطورين بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " )
 end
 end,{msg=msg})
 end
@@ -674,10 +674,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if redis:get(Pearlin.."lock_brod") then
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد تفعيل اذاعه المطورين    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" )
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد تفعيل اذاعه المطورين    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " )
 else 
 redis:set(Pearlin.."lock_brod",true)
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم تفعيل اذاعه المطورين بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" )
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم تفعيل اذاعه المطورين بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " )
 end
 end,{msg=msg})
 end
@@ -689,10 +689,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if not redis:get(Pearlin.."replay"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم بالتأكيد تعطيل الردود    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" )
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم بالتأكيد تعطيل الردود    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " )
 else
 redis:del(Pearlin.."replay"..msg.chat_id_)
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم تعطيل الردود بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" )
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم تعطيل الردود بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " )
 end
 end,{msg=msg})
 end
@@ -703,10 +703,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if redis:get(Pearlin.."replay"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد تفعيل الردود    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" )
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد تفعيل الردود    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " )
 else 
 redis:set(Pearlin.."replay"..msg.chat_id_,true)
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم تفعيل الردود بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" )
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم تفعيل الردود بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " )
 end
 end,{msg=msg})
 end
@@ -718,10 +718,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if not redis:get(Pearlin.."lock_service") then
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم بالتأكيد تعطيل نظام البوت خدمي    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم بالتأكيد تعطيل نظام البوت خدمي    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else
 redis:del(Pearlin.."lock_service")
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم تعطيل نظام البوت خدمي بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم تعطيل نظام البوت خدمي بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -732,10 +732,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if redis:get(Pearlin.."lock_service") then
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد تفعيل نظام البوت خدمي    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد تفعيل نظام البوت خدمي    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else 
 redis:set(Pearlin.."lock_service",true)
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم تفعيل نظام البوت خدمي بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم تفعيل نظام البوت خدمي بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -746,10 +746,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if redis:get(Pearlin.."lock_mmno3"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم بالتأكيد قفل الفشار    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم بالتأكيد قفل الفشار    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else
 redis:set(Pearlin.."lock_mmno3"..msg.chat_id_,true)
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم قفل الفشار بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم قفل الفشار بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -760,10 +760,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if not redis:get(Pearlin.."lock_mmno3"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح الفشار    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح الفشار    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else 
 redis:del(Pearlin.."lock_mmno3"..msg.chat_id_)
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح الفشار بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح الفشار بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -775,10 +775,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if redis:get(Pearlin.."lock_pharsi"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم بالتأكيد قفل الفارسيه    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم بالتأكيد قفل الفارسيه    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else
 redis:set(Pearlin.."lock_pharsi"..msg.chat_id_,true)
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم قفل الفارسيه بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم قفل الفارسيه بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -789,10 +789,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if not redis:get(Pearlin.."lock_pharsi"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح الفارسيه    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح الفارسيه    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else 
 redis:del(Pearlin.."lock_pharsi"..msg.chat_id_)
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح الفارسيه بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح الفارسيه بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -804,10 +804,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if redis:get(Pearlin.."lock_lang"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم بالتأكيد قفل الانكليزيه    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم بالتأكيد قفل الانكليزيه    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else
 redis:set(Pearlin.."lock_lang"..msg.chat_id_,true)
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم قفل الانكليزيه بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم قفل الانكليزيه بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -818,10 +818,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if not redis:get(Pearlin.."lock_lang"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح الانكليزيه    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح الانكليزيه    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else 
 redis:del(Pearlin.."lock_lang"..msg.chat_id_)
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح الانكليزيه بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح الانكليزيه بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -833,10 +833,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if redis:get(Pearlin.."lock_link"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم بالتأكيد قفل الروابط    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم بالتأكيد قفل الروابط    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else
 redis:set(Pearlin.."lock_link"..msg.chat_id_,true)
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم قفل الروابط بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم قفل الروابط بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -847,10 +847,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if not redis:get(Pearlin.."lock_link"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح الروابط    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح الروابط    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else 
 redis:del(Pearlin.."lock_link"..msg.chat_id_)
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح الروابط بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح الروابط بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -862,10 +862,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if redis:get(Pearlin.."lock_Add"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم بالتأكيد قفل الاضافه    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم بالتأكيد قفل الاضافه    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else
 redis:set(Pearlin.."lock_Add"..msg.chat_id_,true)
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم قفل الاضافه بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم قفل الاضافه بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -876,10 +876,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if not redis:get(Pearlin.."lock_Add"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح الاضافه    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح الاضافه    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else 
 redis:del(Pearlin.."lock_Add"..msg.chat_id_)
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح الاضافه بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح الاضافه بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -891,10 +891,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if redis:get(Pearlin.."lock_tag"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم بالتأكيد قفل التاك (#)    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم بالتأكيد قفل التاك (#)    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else
 redis:set(Pearlin.."lock_tag"..msg.chat_id_,true)
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم قفل التاك (#) بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم قفل التاك (#) بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -906,10 +906,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if not redis:get(Pearlin.."lock_tag"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح التاك (#)    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح التاك (#)    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else 
 redis:del(Pearlin.."lock_tag"..msg.chat_id_)
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح التاك (#) بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح التاك (#) بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -921,10 +921,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if redis:get(Pearlin.."lock_username"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم بالتأكيد قفل المعرفات    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم بالتأكيد قفل المعرفات    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else
 redis:set(Pearlin.."lock_username"..msg.chat_id_,true)
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم قفل المعرفات بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم قفل المعرفات بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -935,10 +935,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if not redis:get(Pearlin.."lock_username"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح المعرفات    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح المعرفات    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else 
 redis:del(Pearlin.."lock_username"..msg.chat_id_)
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح المعرفات بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح المعرفات بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -950,10 +950,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if redis:get(Pearlin.."lock_edit"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم بالتأكيد قفل التعديل    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم بالتأكيد قفل التعديل    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else
 redis:set(Pearlin.."lock_edit"..msg.chat_id_,true)
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم قفل التعديل بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم قفل التعديل بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -964,10 +964,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if not redis:get(Pearlin.."lock_edit"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح التعديل    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح التعديل    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else 
 redis:del(Pearlin.."lock_edit"..msg.chat_id_)
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح التعديل بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح التعديل بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -979,10 +979,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if   redis:get(Pearlin.."lock_spam"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم بالتأكيد قفل الكلايش    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم بالتأكيد قفل الكلايش    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else
 redis:set(Pearlin.."lock_spam"..msg.chat_id_,true)
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم قفل الكلايش بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم قفل الكلايش بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -993,10 +993,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if not redis:get(Pearlin.."lock_spam"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح الكلايش    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح الكلايش    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else 
 redis:del(Pearlin.."lock_spam"..msg.chat_id_)
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح الكلايش بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح الكلايش بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -1008,10 +1008,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if redis:get(Pearlin.."lock_flood"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم بالتأكيد قفل التكرار    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم بالتأكيد قفل التكرار    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else
 redis:set(Pearlin.."lock_flood"..msg.chat_id_,true)
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم قفل التكرار بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم قفل التكرار بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -1022,10 +1022,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if not redis:get(Pearlin.."lock_flood"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح التكرار    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح التكرار    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else 
 redis:del(Pearlin.."lock_flood"..msg.chat_id_)
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح التكرار بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح التكرار بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -1037,10 +1037,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if redis:get(Pearlin.."lock_bots"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم بالتأكيد قفل البوتات    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم بالتأكيد قفل البوتات    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else
 redis:set(Pearlin.."lock_bots"..msg.chat_id_,true)
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم قفل البوتات بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم قفل البوتات بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -1051,11 +1051,11 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if not redis:get(Pearlin.."lock_bots"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح البوتات    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح البوتات    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else 
 redis:del(Pearlin.."lock_bots_by_kick"..msg.chat_id_)
 redis:del(Pearlin.."lock_bots"..msg.chat_id_)
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح البوتات بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح البوتات بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -1067,10 +1067,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if redis:get(Pearlin.."lock_join"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم بالتأكيد قفل الاضافه    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم بالتأكيد قفل الاضافه    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else
 redis:set(Pearlin.."lock_join"..msg.chat_id_,true)
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم قفل الاضافه بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم قفل الاضافه بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -1081,10 +1081,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if not redis:get(Pearlin.."lock_join"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح الاضافه    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح الاضافه    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else 
 redis:del(Pearlin.."lock_join"..msg.chat_id_)
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح الاضافه بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح الاضافه بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -1096,10 +1096,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if redis:get(Pearlin.."lock_markdown"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم بالتأكيد قفل الماركدوان    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم بالتأكيد قفل الماركدوان    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else
 redis:set(Pearlin.."lock_markdown"..msg.chat_id_,true)
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم قفل الماركدوان بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم قفل الماركدوان بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -1110,10 +1110,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if not redis:get(Pearlin.."lock_markdown"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح الماركدوان    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح الماركدوان    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else 
 redis:del(Pearlin.."lock_markdown"..msg.chat_id_)
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح الماركدوان بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح الماركدوان بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -1125,10 +1125,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if redis:get(Pearlin.."lock_webpage"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم بالتأكيد قفل الويب    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم بالتأكيد قفل الويب    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else
 redis:set(Pearlin.."lock_webpage"..msg.chat_id_,true)
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم قفل الويب بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم قفل الويب بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -1139,10 +1139,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if not redis:get(Pearlin.."lock_webpage"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح الويب    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح الويب    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else 
 redis:del(Pearlin.."lock_webpage"..msg.chat_id_)
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح الويب بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح الويب بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -1153,10 +1153,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if redis:get(Pearlin.."mute_gif"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم بالتأكيد قفل المتحركه    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم بالتأكيد قفل المتحركه    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else
 redis:set(Pearlin.."mute_gif"..msg.chat_id_,true)
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم قفل المتحركه بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم قفل المتحركه بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -1167,10 +1167,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if not redis:get(Pearlin.."mute_gif"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح المتحركه    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح المتحركه    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else 
 redis:del(Pearlin.."mute_gif"..msg.chat_id_)
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح المتحركه بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح المتحركه بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -1181,10 +1181,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if redis:get(Pearlin.."mute_game"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم بالتأكيد قفل الالعاب    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم بالتأكيد قفل الالعاب    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else
 redis:set("mute_game"..msg.chat_id_,true)
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم قفل الالعاب بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم قفل الالعاب بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -1195,10 +1195,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if not redis:get(Pearlin.."mute_game"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح الالعاب    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح الالعاب    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else 
 redis:del(Pearlin.."mute_game"..msg.chat_id_)
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح الالعاب بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح الالعاب بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -1209,10 +1209,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if redis:get(Pearlin.."mute_inline"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم بالتأكيد قفل الانلاين    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم بالتأكيد قفل الانلاين    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else
 redis:set(Pearlin.."mute_inline"..msg.chat_id_,true)
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم قفل الانلاين بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم قفل الانلاين بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -1223,10 +1223,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if not redis:get(Pearlin.."mute_inline"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح الانلاين    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح الانلاين    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else 
 redis:del(Pearlin.."mute_inline"..msg.chat_id_)
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح الانلاين بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح الانلاين بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -1237,10 +1237,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if redis:get(Pearlin.."mute_text"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم بالتأكيد قفل الدردشه    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم بالتأكيد قفل الدردشه    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else
 redis:set(Pearlin.."mute_text"..msg.chat_id_,true)
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم قفل الدردشه بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم قفل الدردشه بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -1251,10 +1251,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if not redis:get(Pearlin.."mute_text"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح الدردشه    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح الدردشه    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else 
 redis:del(Pearlin.."mute_text"..msg.chat_id_)
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح الدردشه بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح الدردشه بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -1265,10 +1265,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if redis:get(Pearlin.."mute_photo"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم بالتأكيد قفل الصور    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم بالتأكيد قفل الصور    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else
 redis:set(Pearlin.."mute_photo"..msg.chat_id_,true)
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم قفل الصور بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم قفل الصور بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -1280,10 +1280,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if not redis:get(Pearlin.."mute_photo"..msg.chat_id_)then
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح الصور    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح الصور    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else 
 redis:del(Pearlin.."mute_photo"..msg.chat_id_)
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح الصور بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح الصور بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -1296,10 +1296,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if redis:get(Pearlin.."mute_video"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم بالتأكيد قفل الفيديو    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم بالتأكيد قفل الفيديو    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else
 redis:set(Pearlin.."mute_video"..msg.chat_id_,true)
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم قفل الفيديو بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم قفل الفيديو بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -1310,10 +1310,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if not redis:get(Pearlin.."mute_video"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح الفيديو    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح الفيديو    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else 
 redis:del(Pearlin.."mute_video"..msg.chat_id_)
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح الفيديو بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح الفيديو بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -1324,10 +1324,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if redis:get(Pearlin.."mute_audio"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم بالتأكيد قفل الصوت    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم بالتأكيد قفل الصوت    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else
 redis:set(Pearlin.."mute_audio"..msg.chat_id_,true)
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم قفل الحظرالصوت بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم قفل الحظرالصوت بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -1338,10 +1338,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if not redis:get(Pearlin.."mute_audio"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح الصوت    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح الصوت    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else 
 redis:del(Pearlin.."mute_audio"..msg.chat_id_)
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح الصوت بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح الصوت بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -1352,10 +1352,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if redis:get(Pearlin.."mute_voice"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم بالتأكيد قفل البصمات    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم بالتأكيد قفل البصمات    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else
 redis:set(Pearlin.."mute_voice"..msg.chat_id_,true)
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم قفل البصمات بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم قفل البصمات بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -1366,10 +1366,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if not redis:get(Pearlin.."mute_voice"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح البصمات    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح البصمات    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else 
 redis:del(Pearlin.."mute_voice"..msg.chat_id_)
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح البصمات بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح البصمات بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -1382,10 +1382,10 @@ msg = arg.msg
 local NameUser   = Hyper_Link_Name(data)
 
 if   redis:get(Pearlin.."mute_sticker"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم بالتأكيد قفل الملصقات    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم بالتأكيد قفل الملصقات    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else
 redis:set(Pearlin.."mute_sticker"..msg.chat_id_,true)
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم قفل الملصقات بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم قفل الملصقات بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -1396,10 +1396,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if not redis:get(Pearlin.."mute_sticker"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح الملصقات    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح الملصقات    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else 
 redis:del(Pearlin.."mute_sticker"..msg.chat_id_)
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح الملصقات بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح الملصقات بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -1410,10 +1410,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if redis:get(Pearlin.."mute_contact"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم بالتأكيد قفل الجهات    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم بالتأكيد قفل الجهات    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else
 redis:set(Pearlin.."mute_contact"..msg.chat_id_,true)
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم قفل الجهات بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم قفل الجهات بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -1424,10 +1424,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if not redis:get(Pearlin.."mute_contact"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح الجهات    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح الجهات    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else 
 redis:del(Pearlin.."mute_contact"..msg.chat_id_)
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح الجهات بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح الجهات بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -1438,10 +1438,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if redis:get(Pearlin.."mute_forward"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم بالتأكيد قفل التوجيه    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم بالتأكيد قفل التوجيه    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else
 redis:set(Pearlin.."mute_forward"..msg.chat_id_,true)
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم قفل التوجيه بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم قفل التوجيه بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -1452,10 +1452,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if not redis:get(Pearlin.."mute_forward"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح التوجيه    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح التوجيه    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else 
 redis:del(Pearlin.."mute_forward"..msg.chat_id_)
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح التوجيه بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح التوجيه بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -1466,10 +1466,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if redis:get(Pearlin.."mute_location"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم بالتأكيد قفل الموقع    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم بالتأكيد قفل الموقع    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else
 redis:set(Pearlin.."mute_location"..msg.chat_id_,true)
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم قفل الموقع بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم قفل الموقع بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -1480,10 +1480,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if not redis:get(Pearlin.."mute_location"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح الموقع    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح الموقع    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else 
 redis:del(Pearlin.."mute_location"..msg.chat_id_)
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح الموقع بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح الموقع بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -1494,10 +1494,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if redis:get(Pearlin.."mute_document"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم بالتأكيد قفل الملفات    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم بالتأكيد قفل الملفات    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else
 redis:set(Pearlin.."mute_document"..msg.chat_id_,true)
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم قفل الملفات بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم قفل الملفات بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -1508,10 +1508,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if not redis:get(Pearlin.."mute_document"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح الملفات    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح الملفات    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else 
 redis:del(Pearlin.."mute_document"..msg.chat_id_)
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح الملفات بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح الملفات بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -1522,10 +1522,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if redis:get(Pearlin.."mute_tgservice"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم بالتأكيد قفل الاشعارات    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم بالتأكيد قفل الاشعارات    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else
 redis:set(Pearlin.."mute_tgservice"..msg.chat_id_,true)
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم قفل الاشعارات بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم قفل الاشعارات بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -1536,10 +1536,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if not redis:get(Pearlin.."mute_tgservice"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح الاشعارات    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح الاشعارات    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else 
 redis:del(Pearlin.."mute_tgservice"..msg.chat_id_)
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح الاشعارات بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح الاشعارات بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -1551,10 +1551,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if redis:get(Pearlin.."mute_keyboard"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم بالتأكيد قفل الكيبورد    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم بالتأكيد قفل الكيبورد    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else
 redis:set(Pearlin.."mute_keyboard"..msg.chat_id_,true)
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم قفل الكيبورد بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم قفل الكيبورد بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -1565,10 +1565,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if not redis:get(Pearlin.."mute_keyboard"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح الكيبورد    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح الكيبورد    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else 
 redis:del(Pearlin.."mute_keyboard"..msg.chat_id_)
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح الكيبورد بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح الكيبورد بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -1580,11 +1580,11 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if redis:get(Pearlin.."lock_bots_by_kick"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم بالتأكيد قفل البوتات بالطرد    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم بالتأكيد قفل البوتات بالطرد    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else
 redis:set(Pearlin.."lock_bots"..msg.chat_id_,true)
 redis:set(Pearlin.."lock_bots_by_kick"..msg.chat_id_,true)
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم قفل البوتات بالطرد بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم قفل البوتات بالطرد بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -1595,10 +1595,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if not redis:get(Pearlin.."lock_bots_by_kick"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح البوتات بالطرد    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح البوتات بالطرد    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else 
 redis:del(Pearlin.."lock_bots_by_kick"..msg.chat_id_)
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح البوتات بالطرد بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح البوتات بالطرد بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -1609,10 +1609,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if redis:get(Pearlin.."lock_pin"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم بالتأكيد قفل التثبيت    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم بالتأكيد قفل التثبيت    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else
 redis:set(Pearlin.."lock_pin"..msg.chat_id_,true) 
-return sendMsg(msg.chat_id_,msg.id_,"🔒¦ تم قفل التثبيت بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"✧ تـم قفل التثبيت بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
@@ -1623,10 +1623,10 @@ GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
 if not redis:get(Pearlin.."lock_pin"..msg.chat_id_) then
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح التثبيت    \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم بالتأكيد فتح التثبيت    \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 else 
 redis:del(Pearlin.."lock_pin"..msg.chat_id_)
-return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح التثبيت بنجاح   \n📮¦ بواسطه ⋙「 "..NameUser.." 」 \n✓" ) 
+return sendMsg(msg.chat_id_,msg.id_,"🔓¦ تم فتح التثبيت بنجاح   \n✧ بواسـطه ➻「 "..NameUser.." 」 ➻ " ) 
 end
 end,{msg=msg})
 end
