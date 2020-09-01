@@ -506,7 +506,7 @@ usernn = data.type_.user_.username_ or "Ooko0"
 end
 Name = Name:gsub('[[][]]','')
 Name = FlterName(Name,10)
-Name = "["..Name.."](t.me/Ooko0")"
+Name = "["..Name.."](t.me/Ooko0)"
 print(Name)
 return Name
 end
