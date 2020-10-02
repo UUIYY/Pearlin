@@ -4,7 +4,7 @@
 #─████████████─
 #──▀████████▀──
 #─────▀██▀─────
-#┊Pearlin ‿ @TH3NK
+#┊Pearlin ‿ @Ooko0
 #┊@SA3ED ‿ @TH3SS
 #---------------------------------------------------------------------
 ]]
@@ -498,14 +498,14 @@ Name = data.first_name_ .." "..data.last_name_
 else 
 Name = data.first_name_ 
 end
-usernn = data.username_ or "th3nk"
+usernn = data.username_ or "Ooko0"
 else 
 Name = data.title_
-usernn = data.type_.user_.username_ or "th3nk"
+usernn = data.type_.user_.username_ or "Ooko0"
 end
 Name = Name:gsub('[[][]]','')
 Name = FlterName(Name,10)
-Name = "["..Name.."](t.me/"..usernn..")"
+Name = "["..Name.."](t.me/Ooko0)"
 print(Name)
 return Name
 end
@@ -897,7 +897,7 @@ local info  = redis:hgetall(Pearlin..'username:'..v)
 if info and info.username and info.username:match("@[%a%d_]+") then
 message = message ..i.."-l ["..info.username..'] \n'
 else
-message = message ..i.. '-l ['..info.username..'](t.me/th3nk) \n'
+message = message ..i.. '-l ['..info.username..'](t.me/Ooko0) \n'
 end
 
 i=i+1
@@ -909,7 +909,7 @@ local info  = redis:hgetall(Pearlin..'username:'..v)
 if info and info.username and info.username:match("@[%a%d_]+") then
 message = message ..i.."-l ["..info.username..'] \n'
 else
-message = message ..i.. '-l ['..info.username..'](t.me/th3nk) \n'
+message = message ..i.. '-l ['..info.username..'](t.me/Ooko0) \n'
 end
 i=i+1
 end 
@@ -920,7 +920,7 @@ local info  = redis:hgetall(Pearlin..'username:'..v)
 if info and info.username and info.username:match("@[%a%d_]+") then
 message = message ..i.."-l ["..info.username..'] \n'
 else
-message = message ..i.. '-l ['..info.username..'](t.me/th3nk) \n'
+message = message ..i.. '-l ['..info.username..'](t.me/Ooko0) \n'
 end
 i=i+1
 end 
@@ -931,7 +931,7 @@ local info  = redis:hgetall(Pearlin..'username:'..v)
 if info and info.username and info.username:match("@[%a%d_]+") then
 message = message ..i.."-l ["..info.username..'] \n'
 else
-message = message ..i.. '-l ['..info.username..'](t.me/th3nk) \n'
+message = message ..i.. '-l ['..info.username..'](t.me/Ooko0) \n'
 end
 i=i+1
 end 
@@ -943,7 +943,7 @@ local info  = redis:hgetall(Pearlin..'username:'..v)
 if info and info.username and info.username:match("@[%a%d_]+") then
 message = message ..i.."-l ["..info.username..'] \n'
 else
-message = message ..i.. '-l ['..info.username..'](t.me/th3nk) \n'
+message = message ..i.. '-l ['..info.username..'](t.me/Ooko0) \n'
 end
 i=i+1
 end 
@@ -962,7 +962,7 @@ local count = redis:scard(Pearlin..'mtwr_count'..v)
 if info and info.username and info.username:match("@[%a%d_]+") then
 message = message ..k.."-l ["..info.username..'] » (`' ..v.. '`){'..count..'} \n'
 else
-message = message ..k.. '-l ['..info.username..'](t.me/th3nk) l » (`' ..v.. '`){'..count..'} \n'
+message = message ..k.. '-l ['..info.username..'](t.me/Ooko0) l » (`' ..v.. '`){'..count..'} \n'
 end
 end 
 end
@@ -988,7 +988,7 @@ local info = redis:hgetall(Pearlin..'username:'..v)
 if info and info.username and info.username:match("@[%a%d_]+") then
 message = message ..k.."-l ["..info.username..'] » (`' ..v.. '`) \n'
 else
-message = message ..k.. '-l ['..info.username..'](t.me/th3nk) l » (`' ..v.. '`) \n'
+message = message ..k.. '-l ['..info.username..'](t.me/Ooko0) l » (`' ..v.. '`) \n'
 end
 end
 end
@@ -1003,7 +1003,7 @@ local info = redis:hgetall(Pearlin..'username:'..v)
 if info and info.username and info.username:match("@[%a%d_]+") then
 message = message ..k.."-l ["..info.username..'] » (`' ..v.. '`) \n'
 else
-message = message ..k.. '-l ['..info.username..'](t.me/th3nk) l » (`' ..v.. '`) \n'
+message = message ..k.. '-l ['..info.username..'](t.me/Ooko0) l » (`' ..v.. '`) \n'
 end
 end
 end
@@ -1022,7 +1022,7 @@ local info = redis:hgetall(Pearlin..'username:'..v)
 if info and info.username and info.username:match("@[%a%d_]+") then
 message = message ..k.. '-l ['..(info.username or '')..'] » (`' ..v.. '`) \n'
 else
-message = message ..k.. '-l ['..info.username..'](t.me/th3nk) l » (`' ..v.. '`) \n'
+message = message ..k.. '-l ['..info.username..'](t.me/Ooko0) l » (`' ..v.. '`) \n'
 end
 end
 end
@@ -1044,7 +1044,7 @@ local info = redis:hgetall(Pearlin..'username:'..v)
 if info and info.username and info.username:match("@[%a%d_]+") then
 message = message ..k.. '-l ['..info.username..'] » (`' ..v.. '`) \n'
 else
-message = message ..k.. '-l ['..info.username..'](t.me/th3nk) l » (`' ..v.. '`) \n'
+message = message ..k.. '-l ['..info.username..'](t.me/Ooko0) l » (`' ..v.. '`) \n'
 end
 end
 if utf8.len(message) > 4096 then
@@ -1065,7 +1065,7 @@ local info = redis:hgetall(Pearlin..'username:'..v)
 if info and info.username and info.username:match("@[%a%d_]+") then
 message = message ..k.. '-l ['..info.username..'] » (`' ..v.. '`) \n'
 else
-message = message ..k.. '-l ['..info.username..'](t.me/th3nk) l » (`' ..v.. '`) \n'
+message = message ..k.. '-l ['..info.username..'](t.me/Ooko0) l » (`' ..v.. '`) \n'
 end
 end
 if utf8.len(message) > 4096 then
@@ -1095,7 +1095,7 @@ local info = redis:hgetall(Pearlin..'username:'..v)
 if info and info.username and info.username:match("@[%a%d_]+") then
 message = message ..k.. '-l ['..info.username..'] » (`' ..v.. '`) \n'
 else
-message = message ..k.. '-l ['..info.username..'](t.me/th3nk) l » (`' ..v.. '`) \n'
+message = message ..k.. '-l ['..info.username..'](t.me/Ooko0) l » (`' ..v.. '`) \n'
 end
 end
 if utf8.len(message) > 4096 then
@@ -1126,7 +1126,7 @@ local info = redis:hgetall(Pearlin..'username:'..v)
 if info and info.username and info.username:match("@[%a%d_]+") then
 message = message ..k.. '-l ['..info.username..'] » (`' ..v.. '`) \n'
 else
-message = message ..k.. '-l ['..info.username..'](t.me/th3nk) l » (`' ..v.. '`) \n'
+message = message ..k.. '-l ['..info.username..'](t.me/Ooko0) l » (`' ..v.. '`) \n'
 end 
 end 
 if utf8.len(message) > 4096 then
@@ -1156,7 +1156,7 @@ local info = redis:hgetall(Pearlin..'username:'..v)
 if info and info.username and info.username:match("@[%a%d_]+") then
 message = message ..k.. '-l ['..info.username..'] » (`' ..v.. '`) \n'
 else
-message = message ..k.. '-l ['..info.username..'](t.me/th3nk) l » (`' ..v.. '`) \n'
+message = message ..k.. '-l ['..info.username..'](t.me/Ooko0) l » (`' ..v.. '`) \n'
 end
 end 
 if utf8.len(message) > 4096 then
