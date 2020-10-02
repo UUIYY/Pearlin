@@ -69,7 +69,7 @@ print('\n\27[1;31m￤ Conect is Failed !\n￤ حدث خطـآ في آلآتصـ�
 create_config(Token)
 end
 GetUser.result.username = GetUser.result.username or GetUser.result.first_name
-local GetVerisonPearlin = https.request('https://raw.githubusercontent.com/Pearlins/PearlinFiles/master/GetVersion.txt') or 0
+local GetVerisonPearlin = https.request('https://raw.githubusercontent.com/UUIYY/PearlinFiles/master/GetVersion.txt') or 0
 print('\n\27[1;36m￤تم آدخآل آيدي آلمـطـور بنجآح , سـوف يتم تشـغيل آلسـورس آلآن .\n￤Success Save ID : \27[0;32m['..SUDO_USER..']\n\27[0;39;49m')
 Pearlin = Token:match("(%d+)")
 redis:mset(
