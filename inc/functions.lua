@@ -41,11 +41,30 @@ reply_markup_= nil,
 input_message_content_={
 ID = "InputMessageText",
 text_= text,
-disable_web_page_preview_= 1,
+disable_web_page_preview_= 0,
 clear_draft_= 0,
 entities_={},
 parse_mode_=  {ID = "TextParseModeMarkdown"} ,
 }},funcb or dl_cb,nil)
+end
+
+function sendMsgg(chat_id,reply_id,text,markup,funcb)
+pcall(tdcli_function({
+ID="SendMessage",
+chat_id_=chat_id,
+reply_to_message_id_= reply_id,
+disable_notification_=1,
+from_background_= 1,
+reply_markup_= nil,
+input_message_content_={
+ID = "InputMessageText",
+text_= text,
+disable_web_page_preview_= 0,
+clear_draft_= 0,
+entities_={},
+parse_mode_=  {ID = "TextParseModeMarkdown"} ,
+}},funcb or dl_cb,nil)
+)
 end
 
 function sendPhoto(chat_id,reply_id,photo,caption,func)
@@ -505,7 +524,7 @@ usernn = data.type_.user_.username_ or "Ooko0"
 end
 Name = Name:gsub('[[][]]','')
 Name = FlterName(Name,10)
-Name = "["..Name.."](t.me/Ooko0)"
+Name = "["..Name.."](t.me/"..usernn..")"
 print(Name)
 return Name
 end

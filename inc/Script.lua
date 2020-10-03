@@ -50,7 +50,7 @@ if redis:get(Pearlin..'lock_id'..msg.chat_id_) then
 GetUserID(msg.sender_user_id_,function(arg,data)
 
 local msgs = redis:get(Pearlin..'msgs:'..msg.sender_user_id_..':'..msg.chat_id_) or 1
-if data.username_ then UserNameID = "🎫¦ مـعرفك •⊱ @"..data.username_.." ⊰•\n" else UserNameID = "" end
+if data.username_ then UserNameID = "• الـيوزرِ || @"..data.username_.." •\n" else UserNameID = "" end
 if data.username_ then UserNameID1 = "@"..data.username_ else UserNameID1 = "لا يوجد" end
 if data.last_name_ then Name = data.first_name_ .." "..data.last_name_ else Name = data.first_name_ end
 local Namei = FlterName(data,20)
@@ -61,12 +61,11 @@ else
 GetPhotoUser(data.id_,function(arg,data)
 local edited = (redis:get(Pearlin..':edited:'..arg.chat_id_..':'..arg.sender_user_id_) or 0)
 
-local KleshaID = '[👤¦ أســمـك •⊱ { '..arg.Namei..' } ⊰](t.me/ygygg)•\n'
-..'🎟¦ ايديــك •⊱ {'..arg.sender_user_id_..'} ⊰•\n'
-..arg.UserNameID
-..'📡¦ رتبتـــك •⊱ '..arg.TheRank..' ⊰•\n'
-..'⭐️¦ تفاعـلك •⊱ '..Get_Ttl(arg.msgs)..'⊰•\n'
-..'📋¦ رسائلك •⊱ {'..arg.msgs..'} ⊰•\n➖'
+local KleshaID = '- الأيـدي || '..arg.sender_user_id_..'.\n'
+    ..'• ألاسـم  || '..arg.Namei..'. \n'
+    ..arg.UserNameID
+    ..'• الرُتبـه  || '..arg.TheRank..' .\n'
+    ..'• الرسائل || '..arg.msgs..'.\n• القـناه   || @OOKO0 .'
 local Kleshaidinfo = redis:get(Pearlin..":infoiduser_public:"..arg.chat_id_) or redis:get(Pearlin..":infoiduser")  
 
 if Kleshaidinfo then 
@@ -5987,7 +5986,7 @@ Pearlin = {
 "^(تعطيل الايدي)$",
 "^(تعطيل الترحيب)$",
 "^(تعطيل التحذير)$",
-"^(تعطيل الايدي بالصوره)$",
+"^(تفعيل الايدي بالصوره)$",
 "^(تعطيل الحمايه)$",
 "^(تعطيل المغادره)$",
 "^(تعطيل تعيين الايدي)$",
@@ -6002,7 +6001,7 @@ Pearlin = {
 "^(تفعيل الايدي)$",
 "^(تفعيل الترحيب)$",
 "^(تفعيل التحذير)$",
-"^(تفعيل الايدي بالصوره)$",
+"^(تعطيل الايدي بالصوره)$",
 "^(تفعيل الحمايه)$",
 "^(تفعيل المغادره)$",
 "^(تفعيل تعيين الايدي)$",
